@@ -1,0 +1,66 @@
+mixin sGoods(data)
+	// start sGoods
+	+b.SECTION.sGoods.section#sGoods&attributes(attributes)
+		.container
+			+e.top-row.row
+				.col-xl-3
+					+e.catalog-txt Каталог
+				.col-xl-9
+					+b.section-title
+						h2
+							| Наша
+							|
+							span продукція
+					+e.sub-row.row
+						+sGoodsCard({
+							imgNum: 1,
+							title: 'ТРОС СТАЛЕВИЙ',
+							descr: 'Канати сталеві: кранові, ліфтові, шахтні, екскаваторні, талеві, морські та загального призначення.',
+						})
+						+sGoodsCard({
+							imgNum: 2,
+							title: 'стропи Канатні',
+							descr: 'Вантажні канатні стропи є найбільш поширеним видом вантажозахватних пристосувань.',
+						})
+						+sGoodsCard({
+							imgNum: 3,
+							title: 'стропи текстильні',
+							descr: 'Стропа текстильна має переваги, як над канатними, так і над ланцюговими стропами.',
+						})
+						+sGoodsCard({
+							imgNum: 4,
+							title: 'стропи Ланцюгові',
+							descr: 'Ланцюгові стропи використовуються в будівництві, важкої промисловості та інше.',
+						})
+						+sGoodsCard({
+							imgNum: 5,
+							title: 'Стяжні ремені',
+							descr: 'Головною перевагою стяжних ременів є простота в експлуатації в купі з надійністю.',
+						})
+						+sGoodsCard({
+							imgNum: 6,
+							title: 'Буксирувальні ремені',
+							descr: 'Пристрій, що використовується для буксирування практично всіх колісних транспортних засобів.',
+						})
+						+sGoodsCard({
+							imgNum: 7,
+							title: 'Буксирувальні ТРОСИ',
+							descr: 'Міцні ланцюги для перетягування автомобілів, суден та інших транспортних засобів.',
+						})
+						+sGoodsCard({
+							imgNum: 8,
+							title: 'ТАЛІ РУЧНІ ЛАНЦЮГОВІ',
+							descr: 'Призначені для підйому, підтягування й утримання в піднятому положенні вантажів.',
+						})
+	// end sGoods
+
+mixin sGoodsCard(data)
+	.col-lg-4.col-sm-6
+		+e.card(href="#")
+			+e.img
+				+pic(`sGoodsCard-${data.imgNum}.jpg`)
+			+e.title=data.title
+			+e.descr=data.descr
+			+e.link
+				| Дізнатися більше
+				+icon('arrow-r')

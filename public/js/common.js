@@ -319,13 +319,26 @@ function eventHandler() {
 	}
 
 
+	//css vars
+	let header = document.querySelector(".header--js");
 	function setFixedNav() {
-		let topNav = document.querySelector('.top-nav  ');
-		if (!topNav) return;
+		let header = document.querySelector('.header--js');
+		if (!header) return;
 		window.scrollY > 0
-			? topNav.classList.add('fixed')
-			: topNav.classList.remove('fixed');
+			? header.classList.add('fixed')
+			: header.classList.remove('fixed');
 	}
+
+	function calcHeaderHeight() {
+		document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+		window.setTimeout(() => {document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);}, 10);
+		window.setTimeout(() => {document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);}, 100);
+	}
+
+	window.addEventListener('resize', calcHeaderHeight, {passive: true});
+	window.addEventListener('scroll', calcHeaderHeight, {passive: true});
+	calcHeaderHeight();
+
 
 	function whenResize() {
 		setFixedNav();
@@ -379,6 +392,20 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeModeMomentum: true,
 
+	});
+
+	//luckyone js
+	const headerBlockSlider = new Swiper('.headerBlock-slider-js', {
+		// slidesPerView: 5,
+		allowTouchMove: false,
+		slidesPerView: 1,
+		autoplay: true,
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
 	});
 
 	// modal window

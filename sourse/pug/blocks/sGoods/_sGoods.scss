@@ -1,0 +1,85 @@
+// start .sGoods
+.sGoods {
+  @include media-breakpoint-up(xxl) {
+    --sPT: #{rem(120)};
+    --sPB: #{rem(120)};
+    --sTPB: #{rem(40)};
+  }
+
+  &__top-row{
+    --bs-gutter-x: #{rem(40)};
+    --bs-gutter-y: #{rem(20)};
+  }
+  &__catalog-txt{
+    font-weight: 700;
+    line-height: 1.5;
+
+    text-transform: uppercase;
+    color: $body-color;
+  }
+  .section-title{
+
+    h2{
+
+    }
+  }
+  &__sub-row{
+    --bs-gutter-x: #{rem(24)};
+    --bs-gutter-y: #{rem(24)};
+    @include media-breakpoint-up(xl){
+      --bs-gutter-x: #{rem(40)};
+      --bs-gutter-y: #{rem(40)};
+    }
+  }
+  &__card{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    &:hover{
+      --img-scale: 1.2;
+      --img-o: 0.9;
+    }
+  }
+  &__img{
+    @extend .accept-ratio-frame-nh;
+    padding-top: calc(170/270 * 100%);
+
+    img{
+      transform: scale(var(--img-scale, 1));
+      opacity: var(--img-o, 1);
+    }
+
+    margin-bottom: rem(20);
+  }
+  &__title{
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: $gray-900;
+    margin-bottom: rem(10);
+  }
+  &__descr{
+    color: $body-color;
+    display: block;
+    margin-bottom: rem(20);
+  }
+  &__link{
+    margin-top: auto;
+    color: $primary;
+    display: flex;
+    align-items: center;
+
+    .icon{
+      margin-left: rem(10);
+      font-size: 10px;
+      //color: $white;
+      *{
+        stroke: $primary;
+      }
+    }
+  }
+
+  &__{}
+} // end.sGoods

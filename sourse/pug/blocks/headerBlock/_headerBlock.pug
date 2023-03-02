@@ -1,10 +1,32 @@
 mixin headerBlock()
 	// start headerBlock
-	+b.headerBlock.section#headerBlock&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
+	+b.SECTION.headerBlock.section#headerBlock&attributes(attributes)
+		+e.container.container
+			.section-title
+				h1
+					| виготовлення та реалізації сучасної
+					|
+					br.d-none.d-md-block
+					| вантажопідйомної продукції
+				p
+					| Обираючи нас Ви отримаете: професійну консультацію, високоякісну продукцію, гарантії виробника, та гарні враження від співпраці! Звертайтесь до професіоналів!
+					br
+					br
+					| Ваш надійний партнер з важких рішень!!!
+				a(href='/catalog.html') Перейти в каталог
+			+e.slider
+				.swiper.headerBlock-slider-js
+					.swiper-wrapper
+						+headerBlockSlide(1)
+						+headerBlockSlide(2)
+						+headerBlockSlide(3)
+					+e.pagin-container
+						.container
+							.swiper-pagination
 
-			.row
-						
 	// end headerBlock
+
+mixin headerBlockSlide(imgNum)
+	.swiper-slide
+		+e.box
+			+pic(`headerBlockSlide-${imgNum}.jpg`)(class="headerBlock__slide-img")

@@ -1,2 +1,1 @@
-1. <https://megafronteam.github.io/RepoName/public/>
-2. <https://megafronteam.github.io/RepoName/public/00-modal.html>
+1. <https://luckyone1221.github.io/0993Inox/public/>

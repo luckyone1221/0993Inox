@@ -1,33 +1,72 @@
 mixin menu-toggle()
 	+b.toggle-menu-mobile--js.d-lg-none
 		span
+
 mixin mob-mnu()
-	-
-		//- let path = require('path');
-		//- let fs = require('fs');
-		//- var requestURL = 'top-nav.json';
-		//- var request = new XMLHttpRequest();
-		//- request.open('GET', requestURL);
-		//- request.responseType = 'json';
-		//- let dataJson = JSON.parse(json);
-	//- h1= dataJson['lala'] 
 	+b.menu-mobile--js
 		+b.toggle-menu-mobile--js
 			span
 		+e.inner
 			+mnu()
-	//  мобильное меню
+	//-  мобильное меню
+
+
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
-			.row
-				.col.order-lg-0.order-last
+			+e.row.row.align-items-center.align-items-lg-start
+				.col
+					+e.logo(href="/")
+						img(src="img/svg/logo.svg" alt="")
+				.col-auto.d-none.d-lg-block
+					+mnu()
+				.col-auto
 					.menu-mobile.menu-mobile--js
 						.menu-mobile__inner
-							+menu-toggle()
 							+mnu()
-					
+							+e.contacts-title контакти
+							+topNavNumbers()
+				.col-auto.d-none.d-lg-block
+					+topNavNumbers()
 				.col-auto.d-lg-none
 					+menu-toggle()
 	// end top-nav
+
+mixin topNavNumbers()
+	+topNavNum({
+		logo: "life-icon",
+		telHref: "tel:+380634103686",
+		txt: "+38 (063) 410-36-86",
+		vbHref: "viber://chat?number=+380634103686",
+		tgHref: "tg://resolve?domain=username",
+	})
+	+topNavNum({
+		logo: "vodaphone-icon",
+		telHref: "tel:+380953141646",
+		txt: "+38 (095) 314-16-46",
+		vbHref: "viber://chat?number=+380953141646",
+		tgHref: "tg://resolve?domain=username",
+	})
+	+topNavNum({
+		logo: "life-icon",
+		telHref: "tel:+380937157631",
+		txt: "+38 (093) 715-76-31",
+		vbHref: "viber://chat?number=+380937157631",
+		tgHref: "tg://resolve?domain=username",
+	})
+
+mixin topNavNum(data)
+	+e.number
+		+e.n-row.row
+			.col-auto
+				+e.icon
+					img(src=`img/@2x/${data.logo}.png` alt="")
+			.col-auto
+				+e.txt(href=data.telHref)=data.txt
+			.col-auto
+				+e.icon(href=data.vbHref)
+					img(src=`img/@2x/vb-icon.png` alt="")
+			.col-auto
+				+e.icon(href=data.tgHref)
+					img(src=`img/@2x/tg-icon.png` alt="")
