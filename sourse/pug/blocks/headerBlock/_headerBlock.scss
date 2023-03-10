@@ -13,8 +13,20 @@
 		min-height: calc(600px + var(--header-h));
 	}
 
+	display: flex;
+	flex-direction: column;
 	&__container{
-		padding: calc(var(--pagin-bottom) + #{rem(24)}) calc(#{$container-padding-x} / 2);
+		flex-grow: 1;
+
+		padding-top: rem(24);
+		@include media-breakpoint-up(xxl){
+			padding-top: rem(45);
+		}
+		padding-bottom: rem(24);
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 	.section-title{
 		h1{

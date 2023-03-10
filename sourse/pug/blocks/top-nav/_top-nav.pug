@@ -21,7 +21,7 @@ mixin top-nav()
 						img(src="img/svg/logo.svg" alt="")
 				.col-auto.d-none.d-lg-block
 					+mnu()
-				.col-auto
+				.col-auto.d-lg-none
 					.menu-mobile.menu-mobile--js
 						.menu-mobile__inner
 							+mnu()
@@ -57,7 +57,7 @@ mixin topNavNumbers()
 	})
 
 mixin topNavNum(data)
-	+e.number
+	+b.number
 		+e.n-row.row
 			.col-auto
 				+e.icon

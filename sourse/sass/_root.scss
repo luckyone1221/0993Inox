@@ -12,6 +12,12 @@
 	}
 
 
+	--small-col-w: 18%;
+	@include media-breakpoint-up(xl){
+		--small-col-w: 25%;
+	}
+
+
 	--fancybox-content-color: var(--bs-body-color);
 		--swiperArrowSize: #{rem(68)};
 		--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);

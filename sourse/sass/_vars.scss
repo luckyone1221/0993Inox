@@ -867,12 +867,12 @@ $form-label-color:                      null !default;
 // scss-docs-end form-label-variables
 
 // scss-docs-start form-input-variables
-$input-padding-y:                       $input-btn-padding-y !default;
-$input-padding-x:                       $input-btn-padding-x !default;
+$input-padding-y:                       rem(9.5);
+$input-padding-x:                       rem(19);
 $input-font-family:                     $input-btn-font-family !default;
 $input-font-size:                       $input-btn-font-size !default;
 $input-font-weight:                     $font-weight-base !default;
-$input-line-height:                     $input-btn-line-height !default;
+$input-line-height:                     1;
 
 $input-padding-y-sm:                    $input-btn-padding-y-sm !default;
 $input-padding-x-sm:                    $input-btn-padding-x-sm !default;
@@ -888,7 +888,7 @@ $input-disabled-bg:                     var(--#{$prefix}form-control-disabled-bg
 $input-disabled-border-color:           null !default;
 
 $input-color:                           var(--#{$prefix}body-color) !default;
-$input-border-color:                    var(--#{$prefix}border-color) !default; //$gray-400
+$input-border-color:                    #D8D8D9; //$gray-400
 $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow:                      $box-shadow-inset !default;
 
@@ -902,7 +902,7 @@ $input-focus-color:                     $input-color !default;
 $input-focus-width:                     $input-btn-focus-width !default;
 $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
-$input-placeholder-color:               var(--#{$prefix}secondary-color) !default;
+$input-placeholder-color:               rgba($body-color, .5);
 $input-plaintext-color:                 var(--#{$prefix}body-color) !default;
 
 $input-height-border:                   calc($input-border-width * 2) !default; // stylelint-disable-line function-disallowed-list

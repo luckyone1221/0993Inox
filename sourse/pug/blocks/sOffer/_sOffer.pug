@@ -1,0 +1,42 @@
+mixin sOffer(data)
+	// start sOffer
+	+b.SECTION.sOffer.section#sOffer&attributes(attributes)
+		+e.container.container
+			+e.row.row
+				+e.col--small.col-lg-auto
+					+e.left-txt Послуги
+				.col-lg
+					+b.section-title
+						h2
+							| Ми
+							|
+							span пропонуємо
+					+e.sub-row.row
+						+sOfferItem()
+							b Виготовлення вантових строп
+							|
+							| (розтяжки) методом заплітання, обжиму, заливанням цинком
+						+sOfferItem()
+							b Виготовлення муфт,
+							|
+							| втулок, вантових ковшів,кінцевих різьбових наконечників
+						+sOfferItem()
+							b Такелажні комплектуючі:
+							|
+							| ланки,гаки,скоби,затискачі, талрепи, фаркопи та безліч іншого
+						+sOfferItem()
+							b Виготовлення вантазозахватних виробів
+							|
+							| за кресленнями чи ескізами замовника
+						+sOfferItem()
+							b Підйомні механізми
+							|
+							| та захоплювачі:талі,лебідки (підйомні,тягові,маневрові)
+	+b.orange-banner ВАШ НАДІЙНИЙ ПАРТНЕР З ВАЖКИХ РІШЕНЬ
+
+	// end sOffer
+
+mixin sOfferItem()
+	.col-md-6
+		+e.item
+			block

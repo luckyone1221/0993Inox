@@ -1,48 +1,196 @@
+.sForm {
+	padding: 0;
+	overflow: hidden;
 
-	// start .sForm
-	.sForm {
-		// --sPT: #{rem()};
-	// --sPB: #{rem()};
-	// --sTPB: #{rem()};
-	&__row{
-		// --bs-gutter-x: #{rem()};
-		--bs-gutter-y: var(--bs-gutter-x);
-
+	--sTPB: #{rem(0)};
+	@include media-breakpoint-up(lg){
+		--sPT: #{rem(120)};
+		--sPB: #{rem(120)};
 	}
-	.section-title{
-		
+
+	position: relative;
+	z-index: 1;
+	&__bg{
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: #f8f8f8;
+
+		&:before,
+		&:after{
+			@include media-breakpoint-up(lg){
+				content: '';
+			}
+			position: absolute;
+			pointer-events: none;
+			background-color: #d8d8d9;
+			width: 120vw;
+			left: -10vw;
+			height: 1px;
+		}
+
+		&:before{
+			top: 28.7%;
+		}
+		&:after{
+			top: 84.5%;
+		}
+	}
+	&__circle{
+		position: absolute;
+		pointer-events: none;
+		z-index: -1;
+		width: rem(724);
+		height: rem(724);
+		border: 1px solid #d8d8d9;
+		border-radius: 50%;
+
+		right: 0;
+		@include media-breakpoint-up(xl){
+			right: rem(94);
+		}
+		top: 28.7%;
+	}
+	&__container{
+		padding-top: var(--sPT);
+		padding-bottom: var(--sPB);
+		position: relative;
+
+		&:before,
+		&:after{
+			@include media-breakpoint-up(lg){
+				content: '';
+			}
+			position: absolute;
+			pointer-events: none;
+			height: 120vh;
+			width: 1px;
+			background-color: #d8d8d9;
+			//background-color: red;
+			top: -10vw;
+		}
+
+		&:before{
+			left: calc(#{$container-padding-x} / 2  - 2px);
+		}
+		&:after{
+			right: -1px;
+		}
+	}
+	&__row{
+		--bs-gutter-x: #{rem(40)};
+
+		--bs-gutter-y: #{rem(24)};
+		@include media-breakpoint-up(lg){
+			--bs-gutter-y: #{rem(40)};
+		}
+
+		position: relative;
+		z-index: 1;
+		&:before,
+		&:after{
+			@include media-breakpoint-up(lg){
+				content: '';
+			}
+			position: absolute;
+			z-index: -1;
+			pointer-events: none;
+			height: 120vh;
+			width: 1px;
+			background-color: #d8d8d9;
+			//background-color: red;
+			top: -10vw;
+		}
+
+		&:before{
+			left: calc(var(--small-col-w) - 0px);
+		}
+		&:after{
+			right: calc((100% - var(--small-col-w)) / 2 - 3px);
+		}
 	}
 	&__col{
+		&--small{
+			@include media-breakpoint-up(lg){
+				width: var(--small-col-w) !important;
+			}
+		}
+		&--big{
+			@include media-breakpoint-up(lg){
+				width: calc((100% - var(--small-col-w)) / 2) !important;
+			}
+		}
+	}
+	&__left-txt{
+		@extend .left-txt;
+		color: $body-color;
+	}
+	.section-title{
+		h2{}
+	}
 
+	//
+	&__txt{
+		font-weight: 400;
+		margin-bottom: rem(40);
+	}
+	&__numbers{
+		margin-bottom: rem(20);
+	}
+	.number{
+		padding: 0!important;
+		border: none!important;
+		&:last-child{
+			border: none!important;
+		}
+
+		margin-bottom: rem(18);
+		&__n-row{
+			justify-content: flex-start;
+		}
 	}
 	&__item{
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(20);
+		font-weight: 500;
+		line-height: calc(19/16);
+		color: $gray-900;
 
-	}
-	&__slide{
-		height: auto;
-	}
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
-	
-	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+		@include media-breakpoint-up(lg){
+			max-width: rem(300);
+		}
 
+		.icon{
+			flex-shrink: 0;
+			font-size: rem(16);
+			min-width: rem(16);
+			color: $gray-900;
+			margin-right: rem(10);
+		}
+	}
+	//
+	.form-wrap{
+		&__input-wrap{
+			margin-bottom: rem(20);
+			textarea{
+				min-height: rem(132);
+			}
+		}
+		&__input{
+
+		}
+		&__btn{
+			@extend .btn;
+			@extend .btn-primary;
+
+			min-width: rem(180);
+		}
+	}
+
+
+	&__{}
 } // end.sForm

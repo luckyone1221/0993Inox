@@ -1,13 +1,35 @@
 mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 sForm
-				
+		+e.bg
+		+e.container.container
+			+e.circle.d-none.d-lg-block
 			+e.row.row
-			+form-wrap
-				+input("",'')
-				+input("",'')
-				+input("",'')
+				+e.col--small.col-lg-auto
+					+e.left-txt Контакти
+				+e.col--big.col-lg-auto
+					+b.section-title
+						h2
+							span Зв'язатись
+							|
+							| з нами
+				+e.col--big.col-lg-auto.d-none.d-lg-block
+				//-
+				+e.col--small.col-lg-auto.d-none.d-lg-block
+				+e.col--big.col-lg-auto
+					+e.txt Обираючи нас Ви отримаете: професійну консультацію, високоякісну продукцію, гарантії виробника, та гарні враження від співпраці! Звертайтесь до професіоналів.
+					+e.numbers
+						+topNavNumbers()
+					+e.item(href="mailto:inox.customercare@gmail.com")
+						+icon('mail')
+						span inox.customercare@gmail.com
+					+e.item
+						+icon('location')
+						span вулиця князя Ярослава Мудрого 68, м. Дніпро, Україна
+				+e.col--big.col-lg-auto
+					+form-wrap
+						+input("Ім’я", 'text', undefined, 'name')
+						+input("Телефон", 'tell', undefined, 'name')
+						+input("Ваше повідомлення або питання...", 'textarea', undefined, 'name')
+						+e.btn(type="submit") Відправити
 	// end sForm

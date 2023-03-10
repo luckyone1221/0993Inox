@@ -1,0 +1,164 @@
+// start .sAbout
+.sAbout {
+	@include media-breakpoint-up(lg){
+		--sPT: #{rem(90)};
+		--sPB: #{rem(81)};
+	}
+	--sTPB: 0!important;
+	padding: 0!important;
+	overflow: hidden;
+
+
+	position: relative;
+	z-index: 1;
+	&__bg{
+		background: $gray-900;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		&:before,
+		&:after{
+			@include media-breakpoint-up(lg){
+				content: '';
+			}
+			position: absolute;
+			pointer-events: none;
+			width: 120vw;
+			height: 1px;
+			background-color: #4e4f51;
+			//background-color: red;
+			left: -10vw;
+		}
+		&:before{
+			top: 20%;
+		}
+		&:after{
+			top: 41.6%;
+		}
+	}
+	&__container{
+		padding-top: var(--sPT);
+		padding-bottom: var(--sPB);
+		position: relative;
+
+		&:before,
+		&:after{
+			@include media-breakpoint-up(lg){
+				content: '';
+			}
+			position: absolute;
+			pointer-events: none;
+			height: 10000px;
+			width: 1px;
+			background-color: #4e4f51;
+			//background-color: red;
+			top: -100px;
+		}
+
+		&:before{
+			left: calc(#{$container-padding-x} / 2  - 2px);
+		}
+		&:after{
+			right: calc(#{$container-padding-x} / 2  - 2px);
+		}
+	}
+	&__circle{
+		position: absolute;
+		pointer-events: none;
+		z-index: -1;
+		width: rem(724);
+		height: rem(724);
+		border: 1px solid #4e4f51;
+		border-radius: 50%;
+		left: calc(#{$container-padding-x} / 2);
+		top: 20%;
+	}
+
+
+	&__row{
+		--bs-gutter-x: #{rem(40)};
+		--bs-gutter-y: #{rem(40)};
+
+
+		position: relative;
+		z-index: 1;
+		&:before,
+		&:after{
+			@include media-breakpoint-up(lg){
+				content: '';
+			}
+			position: absolute;
+			z-index: -1;
+			pointer-events: none;
+			height: 10000px;
+			width: 1px;
+			background-color: #4e4f51;
+			//background-color: red;
+			top: -1000px;
+		}
+
+		&:before{
+			left: calc(var(--small-col-w) - 0px);
+		}
+		&:after{
+			right: calc((100% - var(--small-col-w)) / 2 - 3px);
+		}
+	}
+	&__col{
+
+		&--small{
+
+			@include media-breakpoint-up(lg){
+				width: var(--small-col-w) !important;
+			}
+		}
+		&--big{
+			@include media-breakpoint-up(lg){
+				width: calc((100% - var(--small-col-w)) / 2) !important;
+			}
+		}
+
+		&--long{
+
+		}
+	}
+
+
+	&__left-txt{
+		@extend .left-txt;
+	}
+	.section-title{
+		color: $white;
+	}
+	&__txt-box{
+		@include media-breakpoint-up(lg){
+			min-height: rem(376);
+		}
+		color: rgba(255, 255, 255, 0.8);
+
+		p{
+			margin-bottom: rem(24);
+			@include media-breakpoint-up(lg){
+				margin-bottom: rem(56);
+			}
+
+			&:last-child{
+				margin-bottom: 0!important;
+			}
+		}
+	}
+	&__logo-row{
+		--bs-gutter-x: 22px;
+	}
+
+	&__sub-title{
+		padding-top: 3.5px;
+		font-weight: 700;
+		color: rgba(255, 255, 255, 0.8);
+	}
+	&__{}
+} // end.sAbout
