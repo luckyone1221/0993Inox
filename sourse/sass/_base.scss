@@ -9,7 +9,7 @@
 	background-position: center 0;
 	opacity: 0;
  	//opacity: 0.7;
-	height: 4606px;
+	//height: 1530px;
 } 
 
 body,
@@ -112,6 +112,7 @@ body {
 }
 main{
 	flex-grow: 1;
+	padding-top: var(--header-h);
 }
 // .main-wrapper__inner{
 // 	// overflow-x: hidden;

@@ -1,0 +1,43 @@
+mixin sDelivery(data)
+	// start sDelivery
+	+b.SECTION.sDelivery.section#sDelivery&attributes(attributes)
+		//-.container
+			+e.bg
+				+pic('sDelivery-bg.jpg')(class="sDelivery__bg")
+		+e.bg
+			+pic('sDelivery-bg.jpg')(class="sDelivery__pic")
+			.container
+				+b.section-title
+					h1 Доставка
+		.container
+			+e.box
+				h2 Способи доставки (отримання товару)
+				p Доставка продукції по Україні здійснюється наступними транспортними службами:
+				+e.row.row.align-items-center
+					+sDeliveryItem(1)
+					+sDeliveryItem(2)
+				p Вартість доставки розраховуються згідно тарифів перевізників.
+				p
+					| Наші менеджери при оформленні замовлення підкажуть найбільш вигідні умови доставки в залежності
+					|
+					br.d-none.d-lg-block
+					| від товару і регіону.
+			+e.box
+				h2 Способи оплати
+				p.mb-0
+					| Оплата замовлення здійснюється безготівковим розрахуноком з ПДВ. ТК ІНОКС разом з
+					|
+					br.d-none.d-lg-block
+					| відвантаженням товару надає пакет усіх необхідних документів:
+				ul
+					li Договір поставки;
+					li Рахунок-фактура;
+					li Видаткова накладна;
+					li Сертифікат якості;
+					li Паспорт.
+	// end sDelivery
+
+mixin sDeliveryItem(imgNum)
+	.col-auto
+		+e.img
+			img(src=`img/@2x/sDelivery-${imgNum}.png` alt="")

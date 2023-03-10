@@ -1,6 +1,7 @@
 // start .headerBlock
 .headerBlock {
-	padding-top: var(--header-h);
+	//
+	padding-top: 0;
 	color: $white;
 
 	--pagin-bottom: #{rem(30)};
@@ -8,9 +9,9 @@
 		--pagin-bottom: #{rem(60)};
 	}
 
-	min-height: 100vh;
+	min-height: calc(100vh - var(--header-h));
 	@include media-breakpoint-up(xxl){
-		min-height: calc(600px + var(--header-h));
+		min-height: calc(600px);
 	}
 
 	display: flex;
