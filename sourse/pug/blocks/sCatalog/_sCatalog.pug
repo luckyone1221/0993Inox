@@ -1,41 +1,129 @@
-mixin product-item(i, t, p ,pr)
-	+b.ARTICLE.product-item
-		+e.img-wrap(href="#")
-			//- если надо картинку по центру  вывести использовать обертку .img-wrap-center  - если нет- убираем
-			.img-wrap-center 
-				+img(`img/prod-${i}.jpg`)
-		+e.caption
-			+e.title!= t
-			+e.text!= p
-			+e.price!= pr
-			+e.btn(href='#')
-	// /.product-item
-
 mixin sCatalog(data)
 	// start sCatalog
 	+b.sCatalog.section&attributes(attributes)
+		+b.section-bg
+			+pic('sCatalog-bg.jpg')
+			.container
+				+b.section-title
+					h1 Каталог ТОВАРІВ
 		.container
-			+b.section-title.text-center
-				h2 sCatalog
-				p Выкупаем проблемные автомобили в день обращения
+			+e.main-row.row
+				+e.col--left.col-lg-3.col-md-3
+					+e.filters.sticky.filters-js
+						+e.f-container.container
+							+e.f-close.f-toggle-js
+								+icon('cross')
+							+e.category-txt КАТЕГОРІЇ
+							+e.f-items.mixit-chb-group-js
+								+sCatalogFilterItem({
+									value: 'all',
+									txt: 'Всі товари',
+								})
+								+sCatalogFilterItem({
+									value: '.stalevi-kanaty',
+									txt: 'Сталеві канати',
+								})
+								+sCatalogFilterItem({
+									value: '.stropy-kanatni',
+									txt: 'Стропи канатні',
+								})(checked)
+								+sCatalogFilterItem({
+									value: '.stropy-tekstylni',
+									txt: 'Стропи текстильні',
+								})
+								+sCatalogFilterItem({
+									value: '.stropy-lantsiuhovi',
+									txt: 'Стропи ланцюгові',
+								})
+								+sCatalogFilterItem({
+									value: '.stiazhni-remeni',
+									txt: 'Стяжні ремені',
+								})
+								+sCatalogFilterItem({
+									value: '.buksyruvalni-remeni',
+									txt: 'Буксирувальні ремені',
+								})
+								+sCatalogFilterItem({
+									value: '.buksyruvalni-trosy',
+									txt: 'Буксирувальні троси',
+								})
+								+sCatalogFilterItem({
+									value: '.tali-ruchni-lantsiuhovi',
+									txt: 'Талі ручні ланцюгові',
+								})
+				+e.col--right.col-lg-9.col-md-9
+					+e.items-row.row.mixit-cont-js
+						//-stalevi-kanaty => 2
+						//-stropy-kanatni => 3
+						+sCatalogItem({
+							picName: 'stropu-kanatni-1',
+							title: 'Одногілковий 1СК',
+							pills: ['0,63 т', '0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
+							link: '#',
+						})(class="mix stropy-kanatni")
+						+sCatalogItem({
+							picName: 'stropu-kanatni-2',
+							title: 'Двогілковий 2СК',
+							pills: ['0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т'],
+							link: '#',
+						})(class="mix stropy-kanatni")
+						+sCatalogItem({
+							picName: 'stropu-kanatni-3',
+							title: 'Чотиригілковий 4СК',
+							pills: ['1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
+							link: '#',
+						})(class="mix stropy-kanatni")
+						+sCatalogItem({
+							picName: 'stropu-kanatni-4',
+							title: 'Двопетльовий СКП (заплітання)',
+							pills: ['0,63 т', '0,8 т', '1,25 т', '1,6 т', '2 т', '2,5 т', '2,8 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т'],
+							link: '#',
+						})(class="mix stropy-kanatni")
+						+sCatalogItem({
+							picName: 'stropu-kanatni-5',
+							title: 'Двопетльовий СКП (втулка)',
+							pills: ['0,63 т', '0,8 т', '1,25 т', '1,6 т', '2 т', '2,5 т', '2,8 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т'],
+							link: '#',
+						})(class="mix stropy-kanatni")
+						+sCatalogItem({
+							picName: 'stropu-kanatni-6',
+							title: 'Кільцевій СКК (заплітання)',
+							pills: ['1,25 т', '1,8 т', '2,5 т', '3,2 т', '4 т', '5 т', '7 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
+							link: '#',
+						})(class="mix stropy-kanatni")
+						//-stropy-tekstylni => 4
+						//-stropy-lantsiuhovi => 5
+						//-stiazhni-remeni => 6
+						//-buksyruvalni-remeni => 7
+						//-buksyruvalni-trosy => 8
+						//-tali-ruchni-lantsiuhovi => 9
+						//-
+							+sCatalogItem({
+								picName: '',
+								title: '',
+								pills: ['', '', '', '', '', '', '', '', '', '', ''],
+								link: '',
+							})
+			+e.f-open-btn.f-toggle-js КАТЕГОРІЇ
 
-			+e.row.row
-				- const wrapClass="col-3"
-				+e.col(class= wrapClass)
-					+product-item(`1`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`2`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`3`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`4`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`5`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`6`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`7`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`8`,``,``,``) 
 
-	// end sCatalog
+mixin sCatalogFilterItem(data)
+	+e.f-item
+		label.custom-checkbox
+			input.invisible(type="radio" name="catalog-radio" value=data.value)&attributes(attributes)
+			.circle
+			.txt=data.txt
+
+mixin sCatalogItem(data)
+	+e.item-col.col-sm-6.col-xl-4&attributes(attributes)
+		+e.item(href=data.link)
+			+pic(data.picName)
+			+e.title=data.title
+			+e.pills-row.row
+				-for(let pill of data.pills)
+					+sCatalogPill(pill)
+			+e.btn Переглянути деталі
+
+mixin sCatalogPill(txt)
+	.col-auto.d-block
+		+e.pill=txt

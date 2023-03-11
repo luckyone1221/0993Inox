@@ -1,7 +1,13 @@
 .footer {
   padding: rem(40) rem(0) rem(20);
+  &.has-filter-btn{
+    padding: rem(40) rem(0) rem(80);
+  }
+
   color: $white;
   background-color: $gray-900;
+  position: relative;
+  z-index: 2;
 
   &__row{
     margin-bottom: rem(48);

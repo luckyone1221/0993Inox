@@ -115,33 +115,26 @@ const JSCCommon = {
 		// 	})
 
 
-		// 	tabs.addEventListener('click', function (element) {
-		// 		const btn = element.target.closest(`[data-tab-btn]:not(.active)`);
-		// 		if (!btn) return;
-		// 		const data = btn.dataset.tabBtn;
-		// 		const tabsAllBtn = this.querySelectorAll(`[data-tab-btn`);
-		// 		const content = this.querySelectorAll(`[data-tab-content]`);
-		// 		tabsAllBtn.forEach(element => {
-		// 			element.dataset.tabBtn == data
-		// 				? element.classList.add('active')
-		// 				: element.classList.remove('active')
-		// 		});
-		// 		content.forEach(element => {
-		// 			element.dataset.tabContent == data
-		// 				? (element.classList.add('active'), element.previousSibling.classList.add('active'))
-		// 				: element.classList.remove('active')
-		// 		});
-		// 	})
+			tabs.addEventListener('click', function (element) {
+				const btn = element.target.closest(`[data-tab-btn]:not(.active)`);
+				if (!btn){
+					return;
+				}
+				const data = btn.dataset.tabBtn;
+				const tabsAllBtn = this.querySelectorAll(`[data-tab-btn`);
+				const content = this.querySelectorAll(`[data-tab-content]`);
+				tabsAllBtn.forEach(element => {
+					element.dataset.tabBtn == data
+						? element.classList.add('active')
+						: element.classList.remove('active')
+				});
+				content.forEach(element => {
+					element.dataset.tabContent == data
+						? (element.classList.add('active'), element.previousSibling.classList.add('active'))
+						: element.classList.remove('active')
+				});
+			})
 		// })
-
-		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-			$(this)
-				.addClass('active').siblings().removeClass('active')
-				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-				.eq($(this).index()).fadeIn().addClass('active');
-
-		});
-
 	},
 	// /tabs
 
@@ -408,8 +401,64 @@ function eventHandler() {
 		},
 	});
 
-	// modal window
 
+	//-
+	let mixItContainers = document.querySelectorAll('.mixit-cont-js');
+	let mixItChbGroups = document.querySelectorAll('.mixit-chb-group-js');
+	console.log(mixItContainers, mixItChbGroups)
+
+	for(let [index, container] of Object.entries(mixItContainers)){
+		let currentChbGroup = mixItChbGroups[index];
+		let checkboxes = currentChbGroup.querySelectorAll('input[type="radio"]');//used to be checkbox here
+
+		let mixer = mixitup(container);
+
+		currentChbGroup.addEventListener('change', function() {
+			let selectors = [];
+
+			// Iterate through all checkboxes, pushing the
+			// values of those that are checked into an array
+
+			for (let checkbox of checkboxes){
+				if (checkbox.checked) selectors.push(checkbox.value);
+			}
+
+			// If there are values in the array, join it into a string
+			// using your desired logic, and send to the mixer's .filter()
+			// method, otherwise filter by 'all'
+
+			let selectorString = selectors.length > 0 ?
+				selectors.join(',') : // or '.' for AND logic
+				'all';
+			mixer.filter(selectorString);
+		});
+	}
+
+	//
+	let parent = document.querySelector('.sticky').parentElement;
+
+	while (parent) {
+		const hasOverflow = getComputedStyle(parent).overflow;
+		if (hasOverflow !== 'visible') {
+			console.log(hasOverflow, parent);
+		}
+		parent = parent.parentElement;
+	}
+
+	//- filters
+	$('.f-toggle-js').click(function (){
+		$('.filters-js').toggleClass('active');
+		[document.body, document.querySelector('html')].forEach(el => el.classList.toggle("f-open-fixed"));
+	})
+	window.addEventListener('resize', () => {
+		//need to check vars md breakpoint!!!!
+		if(window.matchMedia("(min-width: 768px)").matches){
+			$('.filters-js').removeClass('active');
+			[document.body, document.querySelector('html')].forEach(el => el.classList.remove("f-open-fixed"));
+		}
+	}, {passive: true})
+
+	//end luckyone js
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
