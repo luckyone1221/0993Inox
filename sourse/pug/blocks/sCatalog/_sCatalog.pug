@@ -18,7 +18,7 @@ mixin sCatalog(data)
 								+sCatalogFilterItem({
 									value: 'all',
 									txt: 'Всі товари',
-								})
+								})(checked)
 								+sCatalogFilterItem({
 									value: '.stalevi-kanaty',
 									txt: 'Сталеві канати',
@@ -26,7 +26,7 @@ mixin sCatalog(data)
 								+sCatalogFilterItem({
 									value: '.stropy-kanatni',
 									txt: 'Стропи канатні',
-								})(checked)
+								})
 								+sCatalogFilterItem({
 									value: '.stropy-tekstylni',
 									txt: 'Стропи текстильні',
@@ -54,39 +54,50 @@ mixin sCatalog(data)
 				+e.col--right.col-lg-9.col-md-9
 					+e.items-row.row.mixit-cont-js
 						//-stalevi-kanaty => 2
+
+						//-remove, only for test
+						-for(let i = 0; i < 5; i++)
+							+sCatalogItem({
+								picName: 'stalevi-kanaty-1',
+								title: `stalevi-kanaty ${i}`,
+								pills: ['0,63 т', '0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
+								link: '/04-prod-page.html',
+							})(class="mix stalevi-kanaty")
+						//-remove, only for test
+
 						//-stropy-kanatni => 3
 						+sCatalogItem({
-							picName: 'stropu-kanatni-1',
+							picName: 'stropy-kanatni-1',
 							title: 'Одногілковий 1СК',
 							pills: ['0,63 т', '0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
 							link: '#',
 						})(class="mix stropy-kanatni")
 						+sCatalogItem({
-							picName: 'stropu-kanatni-2',
+							picName: 'stropy-kanatni-2',
 							title: 'Двогілковий 2СК',
 							pills: ['0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т'],
 							link: '#',
 						})(class="mix stropy-kanatni")
 						+sCatalogItem({
-							picName: 'stropu-kanatni-3',
+							picName: 'stropy-kanatni-3',
 							title: 'Чотиригілковий 4СК',
 							pills: ['1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
 							link: '#',
 						})(class="mix stropy-kanatni")
 						+sCatalogItem({
-							picName: 'stropu-kanatni-4',
+							picName: 'stropy-kanatni-4',
 							title: 'Двопетльовий СКП (заплітання)',
 							pills: ['0,63 т', '0,8 т', '1,25 т', '1,6 т', '2 т', '2,5 т', '2,8 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т'],
 							link: '#',
 						})(class="mix stropy-kanatni")
 						+sCatalogItem({
-							picName: 'stropu-kanatni-5',
+							picName: 'stropy-kanatni-5',
 							title: 'Двопетльовий СКП (втулка)',
 							pills: ['0,63 т', '0,8 т', '1,25 т', '1,6 т', '2 т', '2,5 т', '2,8 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т'],
 							link: '#',
 						})(class="mix stropy-kanatni")
 						+sCatalogItem({
-							picName: 'stropu-kanatni-6',
+							picName: 'stropy-kanatni-6',
 							title: 'Кільцевій СКК (заплітання)',
 							pills: ['1,25 т', '1,8 т', '2,5 т', '3,2 т', '4 т', '5 т', '7 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
 							link: '#',
@@ -114,15 +125,23 @@ mixin sCatalogFilterItem(data)
 			.circle
 			.txt=data.txt
 
+
+mixin sOtherItem(data)
+	+b.prod-slide.swiper-slide
+		+prodItem(data)
+
 mixin sCatalogItem(data)
 	+e.item-col.col-sm-6.col-xl-4&attributes(attributes)
-		+e.item(href=data.link)
-			+pic(data.picName)
-			+e.title=data.title
-			+e.pills-row.row
-				-for(let pill of data.pills)
-					+sCatalogPill(pill)
-			+e.btn Переглянути деталі
+		+prodItem(data)
+
+mixin prodItem(data)
+	+b.prod-item(href=data.link)
+		+pic(data.picName)
+		+e.title=data.title
+		+e.pills-row.row
+			-for(let pill of data.pills)
+				+sCatalogPill(pill)
+		+e.btn Переглянути деталі
 
 mixin sCatalogPill(txt)
 	.col-auto.d-block

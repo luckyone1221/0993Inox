@@ -1,0 +1,60 @@
+// start .sOther
+.sOther {
+	overflow: hidden;
+	--sPB: #{rem(60)};
+	@include media-breakpoint-up(md){
+		--sPB: #{rem(80)};
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: #{rem(60)};
+		--sPB: #{rem(120)};
+		--sTPB: #{rem(40)};
+	}
+
+	.section-title{
+		h2{
+			text-transform: uppercase;
+		}
+	}
+
+	&__slider-wrap{
+
+		.swiper{
+			overflow: visible!important;
+			@include media-breakpoint-up(xxl){
+				margin: 0 -10px;
+				padding: 0 10px;
+			}
+		}
+		.swiper-wrapper{
+
+		}
+		.swiper-slide{
+			height: auto;
+
+			max-width: 100%;
+			width: 270px;
+			@include media-breakpoint-up(lg){
+				width: calc(100% / 3 - (38px * 2/3));
+			}
+			@include media-breakpoint-up(xxl){
+				width: calc(100% / 4 - (38px * 3/4));
+			}
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+} // end.sOther
+
+.prod-slide{
+	.prod-item{
+		padding: 0;
+		border: 0;
+
+		&:before,
+		&:after{
+			content: none;
+		}
+	}
+}

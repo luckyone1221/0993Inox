@@ -1,0 +1,67 @@
+mixin sProdCard(data)
+	// start sProdCard
+	+b.SECTION.sProdCard.section#sProdCard&attributes(attributes)
+		+e.breadcrumb
+			.container
+				+breadcrumb2(data.breadcrumbs)
+		.container
+			+b.section-title
+				h1=data.title
+			+e.row.row
+				+e.col--left.col-md-7.col-lg-6.col-xxl-auto
+					+e.sub-row.row
+						+e.sl-col--thumb.col-md-auto
+							+e.thumb-wrap
+								.swiper.sProdCard-thumb-js
+									.swiper-wrapper
+										-for(let item of data.imgs)
+											+sProdCardThumb(item)
+						+e.sl-col--slider.col-md-auto
+							+e.slider-wrap
+								.swiper.sProdCard-slider-js
+									.swiper-wrapper
+										-for (let item of data.imgs)
+											+sProdCardSlide(item)
+				+e.col--right.col-md-5.col-lg-6.col-xxl-auto
+					+e.chars
+						-for(let item of data.chars)
+							+sProdCardChar(item.key, item.val)
+					+e.btn(href="#") Дізнатися вартість
+			+e.pills-box
+				+e.p-row.row.align-items-center
+					.col-auto
+						+e.p-txt Вантажопідйомність, тонн:
+					.col-auto
+						+e.p-sub-row.row
+							-for (let item of data.pills)
+								+sProdCardPill(item)
+			+e.content
+				block
+			+e.table-title вантажлопідйомність стропіи, т.
+			+e.table-slider
+				.swiper.sProdCard-table-slider-js
+					.swiper-wrapper
+						.swiper-slide
+							img(loading="lazy" src=`img/@2x/${data.tableImg}` alt="")
+	// end sProdCard
+
+mixin sProdCardPill(txt)
+	.col-auto
+		+e.pill=txt
+
+
+mixin sProdCardChar(key, val)
+	+b.offer-item
+		+e.B.key!=key
+		if val
+			+e.SPAN.val!=val
+
+mixin sProdCardThumb(imgName)
+	.swiper-slide
+		+e.thumb
+			img(loading="lazy" src=`img/@2x/${imgName}` alt="")
+
+mixin sProdCardSlide(imgName)
+	.swiper-slide
+		+e.img-box
+			img(loading="lazy" src=`img/@2x/${imgName}` alt="")

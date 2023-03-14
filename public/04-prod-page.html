@@ -11,7 +11,7 @@
 		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
 		<link href="css/main.min.css" rel="stylesheet"/>
 	</head>
-	<body class="main-page" data-bg="02.png">
+	<body class="main-page" data-bg="04.png">
 		<div class="main-wrapper">
 			<!-- start header-->
 			<header class="header header--js" id="header">
@@ -26,8 +26,8 @@
 							<div class="col-auto d-none d-lg-block">
 								<nav>
 									<ul class="menu">
-										<li class="menu-item"><a href="/">КАталог Товарів</a></li>
-										<li class="menu-item"><a href="/">ДОСТАВКА</a></li>
+										<li class="menu-item"><a href="/catalog.html">КАталог Товарів</a></li>
+										<li class="menu-item"><a href="/delivery.html">ДОСТАВКА</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -36,8 +36,8 @@
 									<div class="menu-mobile__inner">
 										<nav>
 											<ul class="menu">
-												<li class="menu-item"><a href="/">КАталог Товарів</a></li>
-												<li class="menu-item"><a href="/">ДОСТАВКА</a></li>
+												<li class="menu-item"><a href="/catalog.html">КАталог Товарів</a></li>
+												<li class="menu-item"><a href="/delivery.html">ДОСТАВКА</a></li>
 											</ul>
 										</nav>
 										<div class="top-nav__contacts-title">контакти
@@ -178,170 +178,211 @@
 			</header>
 			<!-- end header-->
 			<main>
-				<!-- start sCatalog-->
-				<div class="sCatalog section">
-					<div class="section-bg">
-						<!-- picture-->
-						<picture> 
-							<source type="image/webp" srcset="img/@2x/webp/sCatalog-bg.webp"/><img src="img/@2x/sCatalog-bg.jpg" alt="" loading="lazy"/>
-						</picture>
-						<!-- /picture-->
+				<!-- start sProdCard-->
+				<section class="sProdCard section" id="sProdCard">
+					<div class="sProdCard__breadcrumb">
 						<div class="container">
-							<div class="section-title">
-								<h1>Каталог ТОВАРІВ</h1>
-							</div>
+							<nav class="swiper breadcrumb-slider--js">
+								<ol class="breadcrumb swiper-wrapper">
+									<li class="breadcrumb-item swiper-slide"><a href="/">Головна</a>
+									</li>
+									<li class="breadcrumb-item swiper-slide"><a href="/">Каталог</a>
+									</li>
+									<li class="breadcrumb-item swiper-slide"><a href="/">Стропи канатні</a>
+									</li>
+									<li class="breadcrumb-item swiper-slide"><span>Одногілковий 1СК</span>
+									</li>
+								</ol>
+							</nav>
 						</div>
 					</div>
 					<div class="container">
-						<div class="sCatalog__main-row row">
-							<div class="sCatalog__col sCatalog__col--left col-lg-3 col-md-3">
-								<div class="sCatalog__filters sticky filters-js">
-									<div class="sCatalog__f-container container">
-										<div class="sCatalog__f-close f-toggle-js">
-											<svg class="icon icon-cross ">
-												<use xlink:href="img/svg/sprite.svg#cross"></use>
-											</svg>
+						<div class="section-title">
+							<h1>Одногілковий 1СК</h1>
+						</div>
+						<div class="sProdCard__row row">
+							<div class="sProdCard__col sProdCard__col--left col-md-7 col-lg-6 col-xxl-auto">
+								<div class="sProdCard__sub-row row">
+									<div class="sProdCard__sl-col sProdCard__sl-col--thumb col-md-auto">
+										<div class="sProdCard__thumb-wrap">
+											<div class="swiper sProdCard-thumb-js">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<div class="sProdCard__thumb"><img loading="lazy" src="img/@2x/odnohilkovyi-1SK-1.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="sProdCard__thumb"><img loading="lazy" src="img/@2x/odnohilkovyi-1SK-2.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="sProdCard__thumb"><img loading="lazy" src="img/@2x/odnohilkovyi-1SK-3.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="sProdCard__thumb"><img loading="lazy" src="img/@2x/odnohilkovyi-1SK-4.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="sProdCard__thumb"><img loading="lazy" src="img/@2x/odnohilkovyi-1SK-5.png" alt=""/>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
-										<div class="sCatalog__category-txt">КАТЕГОРІЇ
-										</div>
-										<div class="sCatalog__f-items mixit-chb-group-js">
-											<div class="sCatalog__f-item">
-												<label class="custom-checkbox">
-													<input class="invisible" type="radio" name="catalog-radio" value="all"/>
-													<div class="circle"></div>
-													<div class="txt">Всі товари</div>
-												</label>
-											</div>
-											<div class="sCatalog__f-item">
-												<label class="custom-checkbox">
-													<input class="invisible" type="radio" name="catalog-radio" value=".stalevi-kanaty"/>
-													<div class="circle"></div>
-													<div class="txt">Сталеві канати</div>
-												</label>
-											</div>
-											<div class="sCatalog__f-item">
-												<label class="custom-checkbox">
-													<input class="invisible" type="radio" name="catalog-radio" value=".stropy-kanatni" checked="checked"/>
-													<div class="circle"></div>
-													<div class="txt">Стропи канатні</div>
-												</label>
-											</div>
-											<div class="sCatalog__f-item">
-												<label class="custom-checkbox">
-													<input class="invisible" type="radio" name="catalog-radio" value=".stropy-tekstylni"/>
-													<div class="circle"></div>
-													<div class="txt">Стропи текстильні</div>
-												</label>
-											</div>
-											<div class="sCatalog__f-item">
-												<label class="custom-checkbox">
-													<input class="invisible" type="radio" name="catalog-radio" value=".stropy-lantsiuhovi"/>
-													<div class="circle"></div>
-													<div class="txt">Стропи ланцюгові</div>
-												</label>
-											</div>
-											<div class="sCatalog__f-item">
-												<label class="custom-checkbox">
-													<input class="invisible" type="radio" name="catalog-radio" value=".stiazhni-remeni"/>
-													<div class="circle"></div>
-													<div class="txt">Стяжні ремені</div>
-												</label>
-											</div>
-											<div class="sCatalog__f-item">
-												<label class="custom-checkbox">
-													<input class="invisible" type="radio" name="catalog-radio" value=".buksyruvalni-remeni"/>
-													<div class="circle"></div>
-													<div class="txt">Буксирувальні ремені</div>
-												</label>
-											</div>
-											<div class="sCatalog__f-item">
-												<label class="custom-checkbox">
-													<input class="invisible" type="radio" name="catalog-radio" value=".buksyruvalni-trosy"/>
-													<div class="circle"></div>
-													<div class="txt">Буксирувальні троси</div>
-												</label>
-											</div>
-											<div class="sCatalog__f-item">
-												<label class="custom-checkbox">
-													<input class="invisible" type="radio" name="catalog-radio" value=".tali-ruchni-lantsiuhovi"/>
-													<div class="circle"></div>
-													<div class="txt">Талі ручні ланцюгові</div>
-												</label>
+									</div>
+									<div class="sProdCard__sl-col sProdCard__sl-col--slider col-md-auto">
+										<div class="sProdCard__slider-wrap">
+											<div class="swiper sProdCard-slider-js">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<div class="sProdCard__img-box"><img loading="lazy" src="img/@2x/odnohilkovyi-1SK-1.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="sProdCard__img-box"><img loading="lazy" src="img/@2x/odnohilkovyi-1SK-2.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="sProdCard__img-box"><img loading="lazy" src="img/@2x/odnohilkovyi-1SK-3.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="sProdCard__img-box"><img loading="lazy" src="img/@2x/odnohilkovyi-1SK-4.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="sProdCard__img-box"><img loading="lazy" src="img/@2x/odnohilkovyi-1SK-5.png" alt=""/>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="sCatalog__col sCatalog__col--right col-lg-9 col-md-9">
-								<div class="sCatalog__items-row row mixit-cont-js">
-									<div class="sCatalog__item-col col-sm-6 col-xl-4 mix stropy-kanatni">
-										<a class="prod-item" href="#">
-											<!-- picture-->
-											<picture> 
-												<source type="image/webp" srcset="img/@2x/webp/stropu-kanatni-1.webp"/><img src="img/@2x/stropu-kanatni-1.jpg" alt="" loading="lazy"/>
-											</picture>
-											<!-- /picture-->
-											<div class="prod-item__title">Одногілковий 1СК
-											</div>
-											<div class="prod-item__pills-row row">
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">0,63 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">0,8 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">1 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">1,6 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">2 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">2,5 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">3,2 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">4 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">5 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">6,3 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">8 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">10 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">12,5 т
-													</div>
-												</div>
-											</div>
-											<div class="prod-item__btn">Переглянути деталі
-											</div>
-										</a>
+							<div class="sProdCard__col sProdCard__col--right col-md-5 col-lg-6 col-xxl-auto">
+								<div class="sProdCard__chars">
+									<div class="offer-item"><b class="offer-item__key">Строп канатний одногілковий</b>
 									</div>
-									<div class="sCatalog__item-col col-sm-6 col-xl-4 mix stropy-kanatni">
+									<div class="offer-item"><b class="offer-item__key">Коефіцієнт запасу міцності</b><span class="offer-item__val">6:1;</span>
+									</div>
+									<div class="offer-item"><b class="offer-item__key">Матеріал</b><span class="offer-item__val">світлі канати без покриття ГОСТ 7668-80, 2688&#8209;80, гаки G80;</span>
+									</div>
+									<div class="offer-item"><b class="offer-item__key">Температурний діапазон</b><span class="offer-item__val">від -40 до +100 °С;</span>
+									</div>
+									<div class="offer-item"><b class="offer-item__key">Стандарт</b><span class="offer-item__val">ДСТУ EN 13414-1:2018, ДСТУ Б В.2.8-10-98;</span>
+									</div>
+									<div class="offer-item"><b class="offer-item__key">Гарантія</b><span class="offer-item__val">6 місяців.</span>
+									</div>
+								</div>
+								<a class="sProdCard__btn" href="#">Дізнатися вартість
+								</a>
+							</div>
+						</div>
+						<div class="sProdCard__pills-box">
+							<div class="sProdCard__p-row row align-items-center">
+								<div class="col-auto">
+									<div class="sProdCard__p-txt">Вантажопідйомність, тонн:
+									</div>
+								</div>
+								<div class="col-auto">
+									<div class="sProdCard__p-sub-row row">
+										<div class="col-auto">
+											<div class="sProdCard__pill">0,63
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">0,8
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">1
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">1,6
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">2
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">2,5
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">3,2
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">4
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">5
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">6,3
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">8
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">10
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="sProdCard__pill">12,5
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sProdCard__content">
+							<h4>СФЕРИ ЗАСТОСУВАННЯ СТРОП 1СК</h4>
+							<p>Стропи канатні типу 1СК (строп канатний одногілковий) призначені для підйому і переміщення різних вантажів в умовах промислових підприємств, складських господарств, будівельних майданчиків.</p>
+							<h6>Переваги:</h6>
+							<ul>
+								<li>широка поширеність, доступність;</li>
+								<li>універсальність застосування;</li>
+								<li>міцність і зносостійкість;</li>
+								<li>широкий температурний діапазон застосування.</li>
+							</ul>
+							<h6>Недоліки:</h6>
+							<ul>
+								<li>відносно важкі і громіздкі.</li>
+								<li>не компактні в зберіганні та транспортуванні</li>
+								<li>ушкоджують тендітні вантажі, а також ретельно підготовлені поверхні.</li>
+							</ul>
+						</div>
+						<div class="sProdCard__table-title">вантажлопідйомність стропіи, т.
+						</div>
+						<div class="sProdCard__table-slider">
+							<div class="swiper sProdCard-table-slider-js">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><img loading="lazy" src="img/@2x/odnohilkovyi-1SK-table.png" alt=""/></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sProdCard-->
+				<!-- start sOther-->
+				<section class="sOther section" id="sOther">
+					<div class="container">
+						<div class="section-title">
+							<h2>Інші Товари</h2>
+						</div>
+						<div class="sOther__slider-wrap">
+							<div class="swiper sOther-slider-js">
+								<div class="swiper-wrapper">
+									<div class="prod-slide swiper-slide">
 										<a class="prod-item" href="#">
 											<!-- picture-->
 											<picture> 
@@ -408,7 +449,7 @@
 											</div>
 										</a>
 									</div>
-									<div class="sCatalog__item-col col-sm-6 col-xl-4 mix stropy-kanatni">
+									<div class="prod-slide swiper-slide">
 										<a class="prod-item" href="#">
 											<!-- picture-->
 											<picture> 
@@ -479,7 +520,7 @@
 											</div>
 										</a>
 									</div>
-									<div class="sCatalog__item-col col-sm-6 col-xl-4 mix stropy-kanatni">
+									<div class="prod-slide swiper-slide">
 										<a class="prod-item" href="#">
 											<!-- picture-->
 											<picture> 
@@ -558,7 +599,7 @@
 											</div>
 										</a>
 									</div>
-									<div class="sCatalog__item-col col-sm-6 col-xl-4 mix stropy-kanatni">
+									<div class="prod-slide swiper-slide">
 										<a class="prod-item" href="#">
 											<!-- picture-->
 											<picture> 
@@ -637,86 +678,14 @@
 											</div>
 										</a>
 									</div>
-									<div class="sCatalog__item-col col-sm-6 col-xl-4 mix stropy-kanatni">
-										<a class="prod-item" href="#">
-											<!-- picture-->
-											<picture> 
-												<source type="image/webp" srcset="img/@2x/webp/stropu-kanatni-6.webp"/><img src="img/@2x/stropu-kanatni-6.jpg" alt="" loading="lazy"/>
-											</picture>
-											<!-- /picture-->
-											<div class="prod-item__title">Кільцевій СКК (заплітання)
-											</div>
-											<div class="prod-item__pills-row row">
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">1,25 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">1,8 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">2,5 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">3,2 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">4 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">5 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">7 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">8 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">10 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">12,5 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">16 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">20 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">25 т
-													</div>
-												</div>
-												<div class="col-auto d-block">
-													<div class="prod-item__pill">32 т
-													</div>
-												</div>
-											</div>
-											<div class="prod-item__btn">Переглянути деталі
-											</div>
-										</a>
-									</div>
 								</div>
 							</div>
 						</div>
-						<div class="sCatalog__f-open-btn f-toggle-js">КАТЕГОРІЇ
-						</div>
 					</div>
-				</div>
+				</section>
+				<!-- end sOther-->
 			</main>
-			<footer class="footer section has-filter-btn">
+			<footer class="footer section">
 				<div class="container">
 					<div class="footer__row row gy-4">
 						<div class="footer__col footer__col--left col-md-4 col-lg-6 col-xxl-auto">
@@ -730,8 +699,8 @@
 							</div>
 							<div class="footer__menu">
 								<ul>
-									<li><a href="#">Доставка та оплата</a></li>
-									<li><a href="#">Умови повернення товара</a></li>
+									<li><a href="/delivery">Доставка та оплата</a></li>
+									<li><a href="/delivery">Умови повернення товара</a></li>
 								</ul>
 							</div>
 						</div>
@@ -740,14 +709,14 @@
 							</div>
 							<div class="footer__menu">
 								<ul>
-									<li><a href="#">Сталеві канати</a></li>
-									<li><a href="#">Стропи канатні</a></li>
-									<li><a href="#">Стропи текстильні</a></li>
-									<li><a href="#">Стропи ланцюгові</a></li>
-									<li><a href="#">Стяжні ремені</a></li>
-									<li><a href="#">Буксирувальні ремені</a></li>
-									<li><a href="#">Буксирувальні троси</a></li>
-									<li><a href="#">Талі ручні ланцюгові</a></li>
+									<li><a href="catalog.html?category=stalevi-kanaty">Сталеві канати</a></li>
+									<li><a href="catalog.html?category=stropy-kanatni">Стропи канатні</a></li>
+									<li><a href="catalog.html?category=stropy-tekstylni">Стропи текстильні</a></li>
+									<li><a href="catalog.html?category=stropy-lantsiuhovi">Стропи ланцюгові</a></li>
+									<li><a href="catalog.html?category=stiazhni-remeni">Стяжні ремені</a></li>
+									<li><a href="catalog.html?category=buksyruvalni-remeni">Буксирувальні ремені</a></li>
+									<li><a href="catalog.html?category=buksyruvalni-trosy">Буксирувальні троси</a></li>
+									<li><a href="catalog.html?category=tali-ruchni-lantsiuhovi">Талі ручні ланцюгові</a></li>
 								</ul>
 							</div>
 						</div>

@@ -7,3 +7,16 @@ mixin breadcrumb(...items)
 					a(href=(i == 0 ? "/" : '#') itemprop="item" )
 						span( itemprop="name")= items[i]
 						meta(itemprop="position" content= (i + 1) )
+
+mixin breadcrumb2(array)
+	nav.swiper.breadcrumb-slider--js
+		ol.breadcrumb.swiper-wrapper
+			if block
+				block
+			else
+				-for (let item of array)
+					li.breadcrumb-item.swiper-slide
+						if item.href
+							a(href=item.href)=item.txt
+						else
+							span=item.txt

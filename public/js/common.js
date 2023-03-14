@@ -368,13 +368,17 @@ function eventHandler() {
 			// }
 		},
 	}
-	
+
+	//luckyone js
 	const swiperbreadcrumb = new Swiper('.breadcrumb-slider--js', {
 		slidesPerView: 'auto',
+		spaceBetween: 0,
 		freeMode: true,
 		watchOverflow: true
 	});
-	
+
+
+	//exaple
 	const swiper4 = new Swiper('.sBanners__slider--js', {
 		// slidesPerView: 5,
 		...defaultSl,
@@ -387,7 +391,6 @@ function eventHandler() {
 
 	});
 
-	//luckyone js
 	const headerBlockSlider = new Swiper('.headerBlock-slider-js', {
 		// slidesPerView: 5,
 		allowTouchMove: false,
@@ -405,7 +408,6 @@ function eventHandler() {
 	//-
 	let mixItContainers = document.querySelectorAll('.mixit-cont-js');
 	let mixItChbGroups = document.querySelectorAll('.mixit-chb-group-js');
-	console.log(mixItContainers, mixItChbGroups)
 
 	for(let [index, container] of Object.entries(mixItContainers)){
 		let currentChbGroup = mixItChbGroups[index];
@@ -434,15 +436,16 @@ function eventHandler() {
 		});
 	}
 
-	//
-	let parent = document.querySelector('.sticky').parentElement;
-
-	while (parent) {
-		const hasOverflow = getComputedStyle(parent).overflow;
-		if (hasOverflow !== 'visible') {
-			console.log(hasOverflow, parent);
+	//- catalog page parameters !!! has to happen before(or after??) mixIt init
+	let queryString = window.location.search;
+	let urlParams = new URLSearchParams(queryString);
+	let category = urlParams.get('category');
+	if(category){
+		let current = document.querySelector(`input[value=".${category}" ]`);
+		console.log(current);
+		if(current){
+			current.click();
 		}
-		parent = parent.parentElement;
 	}
 
 	//- filters
@@ -457,6 +460,55 @@ function eventHandler() {
 			[document.body, document.querySelector('html')].forEach(el => el.classList.remove("f-open-fixed"));
 		}
 	}, {passive: true})
+
+	//prodCard
+	let prodCardThumb = new Swiper('.sProdCard-thumb-js', {
+		slidesPerView: 'auto',
+
+		breakpoints: {
+			0: {
+				direction: 'horizontal',
+			},
+			768: {
+				direction: 'vertical',
+			}
+		},
+
+		direction: 'vertical',
+		spaceBetween: 20,
+	});
+	let prodCardSlider = new Swiper('.sProdCard-slider-js', {
+		spaceBetween: 0,
+		thumbs: {
+			swiper: prodCardThumb,
+		},
+		loop: true,
+	});
+	let prodCardTable = new Swiper('.sProdCard-table-slider-js', {
+		freeMode: true,
+		breakpoints: {
+			0: {
+				slidesPerView: "auto",
+			},
+			992: {
+				slidesPerView: 1,
+			}
+		},
+
+		spaceBetween: 0,
+	});
+	//
+	let sOtherSlider = new Swiper('.sOther-slider-js', {
+		slidesPerView: "auto",
+		breakpoints: {
+			0: {
+				spaceBetween: 24,
+			},
+			1400: {
+				spaceBetween: 38,
+			}
+		},
+	});
 
 	//end luckyone js
 };

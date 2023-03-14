@@ -1,0 +1,122 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/', txt: 'Каталог',},
+				{
+					href: '/',
+					txt: 'Стропи канатні',
+				},
+				{
+					href: '',
+					txt: 'Одногілковий 1СК',
+				},
+			],
+			title: 'Одногілковий 1СК',
+			imgs: [
+				'odnohilkovyi-1SK-1.png',
+				'odnohilkovyi-1SK-2.png',
+				'odnohilkovyi-1SK-3.png',
+				'odnohilkovyi-1SK-4.png',
+				'odnohilkovyi-1SK-5.png',
+			],
+			chars: [
+				{
+					key: 'Строп канатний одногілковий',
+					val: '',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '6:1;',
+				},
+				{
+					key: 'Матеріал',
+					val: 'світлі канати без покриття ГОСТ 7668-80, 2688&#8209;80, гаки G80;',
+				},
+				{
+					key: 'Температурний діапазон',
+					val: 'від -40 до +100 °С;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 13414-1:2018, ДСТУ Б В.2.8-10-98;',
+				},
+				{
+					key: 'Гарантія',
+					val: '6 місяців.',
+				},
+			],
+			pills: ['0,63', '0,8', '1', '1,6', '2', '2,5', '3,2', '4', '5', '6,3', '8', '10', '12,5'],
+			tableImg: 'odnohilkovyi-1SK-table.png',
+		})
+			//- content here
+			h4 СФЕРИ ЗАСТОСУВАННЯ СТРОП 1СК
+			p Стропи канатні типу 1СК (строп канатний одногілковий) призначені для підйому і переміщення різних вантажів в умовах промислових підприємств, складських господарств, будівельних майданчиків.
+			h6 Переваги:
+			ul
+				li широка поширеність, доступність;
+				li універсальність застосування;
+				li міцність і зносостійкість;
+				li широкий температурний діапазон застосування.
+			h6 Недоліки:
+			ul
+				li відносно важкі і громіздкі.
+				li не компактні в зберіганні та транспортуванні
+				li ушкоджують тендітні вантажі, а також ретельно підготовлені поверхні.
+		+sOther()
+			+sOtherItem({
+				picName: 'stropu-kanatni-2',
+				title: 'Двогілковий 2СК',
+				pills: ['0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т'],
+				link: '#',
+			})
+			+sOtherItem({
+				picName: 'stropu-kanatni-3',
+				title: 'Чотиригілковий 4СК',
+				pills: ['1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
+				link: '#',
+			})
+			+sOtherItem({
+				picName: 'stropu-kanatni-4',
+				title: 'Двопетльовий СКП (заплітання)',
+				pills: ['0,63 т', '0,8 т', '1,25 т', '1,6 т', '2 т', '2,5 т', '2,8 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т'],
+				link: '#',
+			})
+			+sOtherItem({
+				picName: 'stropu-kanatni-5',
+				title: 'Двопетльовий СКП (втулка)',
+				pills: ['0,63 т', '0,8 т', '1,25 т', '1,6 т', '2 т', '2,5 т', '2,8 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т'],
+				link: '#',
+			})
+	+footer()
