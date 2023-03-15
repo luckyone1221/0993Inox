@@ -1,8 +1,12 @@
-
-mixin modal() 
+mixin modal()
 	//  start modals
-	a(href="modal-call").link-modal-js modal-call 
-	div(id="modal-call"  style="display: none" )
+	//a(href="modal-call").link-modal-js modal-call
+	div(id="modal-thanks"  style="display: none")
+		+b.modal-win
+			+form-wrap
+				.text-center
+					+e.title.form-data.h3.ttu Дякуюємо за заявку
+	div(id="modal-call"  style="display: none")
 		+b.modal-win
 			+form-wrap
 				.text-center

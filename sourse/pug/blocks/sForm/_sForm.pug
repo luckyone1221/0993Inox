@@ -28,8 +28,9 @@ mixin sForm()
 						span вулиця князя Ярослава Мудрого 68, м. Дніпро, Україна
 				+e.col--big.col-lg-auto
 					+form-wrap
+						input(type="hidden" value="Секція звязатися з нами" name="order")
 						+input("Ім’я", 'text', undefined, 'name')
-						+input("Телефон", 'tell', undefined, 'name')
+						+input("Телефон", 'tel', undefined, 'tel')
 						+input("Ваше повідомлення або питання...", 'textarea', undefined, 'name')
 						+e.btn(type="submit") Відправити
 	// end sForm
