@@ -1,0 +1,85 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stropy-lantsiuhovi',
+					txt: 'Стропи ланцюгові',
+				},
+				{
+					href: '',
+					txt: 'Строп ланцюговий 2СЛГЗ',
+				},
+			],
+			title: 'Строп ланцюговий 2СЛГЗ',
+			imgs: [
+				'stropy-lantsiuhovi-6.jpg'
+			],
+			chars: [
+				{
+					key: 'Строп ланцюговий двогілковий з ковзними гаками',
+					val: '',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '4:1;',
+				},
+				{
+					key: 'Матеріал',
+					val: 'ланцюг, гак, ланка сполучна або ланцюг, ланка, ланка сполучна;',
+				},
+				{
+					key: 'Температурний діапазон',
+					val: 'від -40 до +100 °С;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 818-4:2018;',
+				},
+				{
+					key: 'Гарантія',
+					val: '6 місяців.',
+				},
+			],
+			pills: ['2,6', '4,25', '6,7', '11,2', '17', '26,5', '31,5', '45'],
+			tableTxt: 'ТЕХНІЧНІ ХАРАКТЕРИСТИКИ ланцюгових СТРОП 2СЛГЗ',
+			tableImg: 'stropy-lantsiuhovi-6-table.png',
+		})
+			//- content here
+			p Строп 2СЛГЗ - це ланцюговий строп, який складається з двох ланцюгових гілок з крюками, які одягнені на вантажопідйомну ланку. Його особливість полягає в тому, що він може бути використаний для підняття вантажу "на зашморг" завдяки крюкам-чокерам, які замінюють стандартні вилкові крюки. Строп складається з комплектуючих по G80, а вартість його вища, ніж вартість аналогічного канатного або текстильного стропу. Однак, це виправдовується довговічністю та універсальністю стропу. Двохветвові ланцюгові стропи з ковзаючими крюками-чокерами мають стандартний запас міцності 4:1 і можуть замінити пару стропів СКП для роботи "на зашморг".
+			p Стропи 2СЛГЗ з крюками-чокерами можуть бути використані у різних галузях, таких як металургійні і інші виробництва з високотемпературними цехами, будівництво, навантажувально-розвантажувальні та такелажні роботи в морських і річкових портах.
+		+sOther()
+			//-other here
+	+footer()

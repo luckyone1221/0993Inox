@@ -1,0 +1,90 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stropy-tekstylni',
+					txt: 'Стропи текстильні',
+				},
+				{
+					href: '',
+					txt: 'Строп текстильний 2СТ',
+				},
+			],
+			title: 'Строп текстильний 2СТ',
+			imgs: [
+				'stropy-tekstylni-2.jpg'
+			],
+			chars: [
+				{
+					key: 'Строп текстильний двогілковий',
+					val: '',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '7:1;',
+				},
+				{
+					key: 'Матеріал',
+					val: '100% поліестер;',
+				},
+				{
+					key: 'Температурний діапазон',
+					val: 'від -40 до +100 °С;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 1492-1:2016;',
+				},
+				{
+					key: 'Гарантія',
+					val: '3 місяці.',
+				},
+			],
+			pills: ['1', '2', '3,2', '4', '5', '6,3', '8', '10', '12,5'],
+			tableTxt: 'ТЕХНІЧНІ ХАРАКТЕРИСТИКИ текстильних СТРОП 2СТ',
+			tableImg: 'stropy-tekstylni-2-table.png',
+		})
+			//- content here
+			p Стропи 2СТ з текстилю є ідеальним варіантом для робіт з підйому і переміщення чутливих вантажів, оскільки широкий та м'який поліестеровий матеріал зменшує ризик пошкодження поверхні вантажу. Також робота з такими тканинними стропами легка, приємна та безпечна. Крім того, їх легкість, компактність та стійкість до корозії роблять їх ідеальним варіантом для використання на автоевакуаторах, автокранах та кранах-маніпуляторах.
+			h6 Сфери застосування:
+			ul
+				li для вантажно-розвантажувальних робіт;
+				li опускання/підйому з водойм різних плавальних засобів, таких як човни, катери, яхти тощо;
+				li комплектації машин з краном-маніпулятором та автокранів;
+				li виробництвах, дотримуючись правил роботи зі стропами.
+		+sOther()
+			//-other here
+	+footer()

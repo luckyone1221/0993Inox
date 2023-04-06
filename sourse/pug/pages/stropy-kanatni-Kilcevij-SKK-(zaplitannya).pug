@@ -1,0 +1,86 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stropy-kanatni',
+					txt: 'Стропи канатні',
+				},
+				{
+					href: '',
+					txt: 'Строп канатний СКК (втулка)',
+				},
+			],
+			title: 'Строп канатний СКК (втулка)',
+			imgs: [
+				'stropy-kanatni-6.jpg'
+			],
+			chars: [
+				{
+					key: 'Строп канатний кільцевий',
+					val: '',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '6:1;',
+				},
+				{
+					key: 'Матеріал',
+					val: 'світлі канати без покриття ГОСТ 7668-80, 2688-80;',
+				},
+				{
+					key: 'Температурний діапазон',
+					val: 'від -40 до +100 °С;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 13414-1:2018, ДСТУ Б В.2.8-10-98;',
+				},
+				{
+					key: 'Гарантія',
+					val: '3 місяці.',
+				},
+			],
+			pills: ['1,25', '1,8', '2,5', '3,2', '4', '5', '7', '8', '10', '12,5', '16', '20', '25', '32'],
+			tableTxt: 'Таблиця з технічними характеристиками канатних строп СКК',
+			tableImg: 'stropy-kanatni-4-table.png',
+		})
+			//- content here
+			p Строп СКП є одним з найбільш поширених типів канатних стропів, завдяки своїм петлям на кінцях, які надають йому універсальність в застосуванні. Петлі СКП формуються шляхом заплітання кінців каната вручну, тому цей строп може також називатися УСК1 (Універсальний Строп Канатний першого виконання).
+			h6 Сфери застосування:
+			p Використання канатних стропів СКП можливе в різних виробничих умовах, включаючи будівництво, навантажувально-розвантажувальні роботи та такелажні роботи в морських і річкових портах.
+		+sOther()
+			//-other here
+	+footer()

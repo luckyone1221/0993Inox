@@ -1,0 +1,88 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stropy-tekstylni',
+					txt: 'Стропи текстильні',
+				},
+				{
+					href: '',
+					txt: 'Строп текстильний петльовий СТП',
+				},
+			],
+			title: 'Строп текстильний петльовий СТП',
+			imgs: [
+				'stropy-tekstylni-4.jpg'
+			],
+			chars: [
+				{
+					key: 'Строп текстильний петльовий',
+					val: '',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '7:1;',
+				},
+				{
+					key: 'Матеріал',
+					val: '100% поліестер;',
+				},
+				{
+					key: 'Температурний діапазон',
+					val: 'від -40 до +100 °С;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 1492-1:2016;',
+				},
+				{
+					key: 'Гарантія',
+					val: '3 місяці.',
+				},
+			],
+			pills: ['1', '2', '3,2', '4', '5', '6,3', '8', '10'],
+			tableTxt: 'ТАБЛИЦЯ ВАНТАЖОПІДЙОМНОСТІ СТП:',
+			tableImg: 'stropy-tekstylni-4-table.png',
+		})
+			//- content here
+			p Стропи СТП є найбільш поширеними серед всіх типів стропів. Їх конструкція дозволяє використовувати різні методи стропування. Петлі на стропах створюються в процесі стропування і не пришиті до стропа, що унеможливлює їх обрив під час роботи зі стропом. Крім того, стропи з гашамі мають різні кольори в залежності від вантажопідйомності, тому важливо звернути на це увагу.
+			p Синтетичні стропи також мають захисну тканину, яка запобігає їх перетиранню в місці контакту з гаком крана. Важливо зазначити, що ціна на текстильні стропи СТП є нижчою, ніж на сталеві канатні стропи.
+			h6 Сфери застосування:
+			p СТП ідеально підходять для укладання і перевезення металевих труб, опускання і зняття з водойм плавальних засобів, комплектації машин з краном-маніпулятором, автокранів і в інших виробничих ситуаціях.
+
+		+sOther()
+			//-other here
+	+footer()

@@ -1,0 +1,90 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stropy-lantsiuhovi',
+					txt: 'Стропи ланцюгові',
+				},
+				{
+					href: '',
+					txt: 'Строп ланцюговий 4СЛ',
+				},
+			],
+			title: 'Строп ланцюговий 4СЛ',
+			imgs: [
+				'stropy-lantsiuhovi-3.jpg'
+			],
+			chars: [
+				{
+					key: 'Строп ланцюговий чотирьохгілковий',
+					val: '',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '7:1;',
+				},
+				{
+					key: 'Матеріал',
+					val: 'ланцюги вантажопідйомні G80, комплектуючі G80;',
+				},
+				{
+					key: 'Температурний діапазон',
+					val: 'від -40 до +100 °С;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 818-4:2018;',
+				},
+				{
+					key: 'Гарантія',
+					val: '6 місяців.',
+				},
+			],
+			pills: ['2,36', '4,25', '6,7', '11,2', '17', '26,5', '31,5', '45'],
+			tableTxt: 'ТЕХНІЧНІ ХАРАКТЕРИСТИКИ ланцюгових СТРОП 4СЛ',
+			tableImg: 'stropy-lantsiuhovi-2-table.png',
+		})
+			//- content here
+			p Ланцюгові стропи складаються з сучасних комплектуючих, які мають міцність 8 класу. Це дозволяє значно зменшити вагу стропів, не втрачаючи при цьому високих показників вантажопідйомності. Вони знайшли широке застосування в різних галузях. Особливо вони популярні при роботі в агресивних середовищах, при високих температурах, а також для підйому вантажів, які мають зміщений центр ваги або гострі кромки.
+			h6 Стропи 4СЦ мають широкий спектр застосування, включаючи:
+			ul
+				li Металургійна промисловість та інші виробництва з високотемпературними цехами;
+				li Будівельна галузь;
+				li Роботи з навантаження та розвантаження вантажів;
+				li Такелажні роботи в морських та річкових портах.
+		+sOther()
+			//-other here
+	+footer()

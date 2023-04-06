@@ -1,0 +1,91 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stiazhni-remeni',
+					txt: 'Стяжні ремені',
+				},
+				{
+					href: '',
+					txt: 'Стяжний ремінь - СР (гак-гак)',
+				},
+			],
+			title: 'Стяжний ремінь - СР (гак-гак)',
+			imgs: [
+				'stiazhni-remeni-1.jpg'
+			],
+			chars: [
+				{
+					key: 'Стандартний стяжний ремінь з гаками і храповиком',
+					val: '',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '2:1;',
+				},
+				{
+					key: 'Матеріал',
+					val: '100% поліестерова стрічка;',
+				},
+				{
+					key: 'Коефіцієнт подовження',
+					val: 'до 5% при максимальному навантаженні;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 12195-2:2018;',
+				},
+				{
+					key: 'Гарантія',
+					val: '2 місяці.',
+				},
+			],
+			pills: ['3', '5', '7,5', '10'],
+			tableTxt: 'ТЕХНІЧНІ ХАРАКТЕРИСТИКИ Стяжних ременів',
+			tableImg: 'stiazhni-remeni-1-table.png',
+		})
+			//- content here
+			p Стяжні ремені є незамінними для безпечного та надійного кріплення вантажів під час транспортування (не призначен для підйому вантажу). Вони складаються з м'якої поліестерової стрічки, гаків або D-образних ланок та ретчета з пластиковою ручкою, який забезпечує натяг стрічки. Натягнутий стяжний ремінь допомагає уникнути переміщення та сповзання вантажу в процесі перевезення, а поліестерова стрічка не пошкоджує вантаж та упаковку.
+			h6 Застосування стяжних ременів з храповим механізмом для фіксації вантажу на:
+			ul
+				li автомобілях,
+				li судах,
+				li причепах,
+				li залізничних платформах.
+			p Головна мета використання таких ременів - забезпечити стійке розташування вантажу на платформі під час перевезення. Для того, щоб уникнути деформації ременя, виробники не рекомендують перевищувати допустиму норму навантаження, яка вказана в інструкції.
+		+sOther()
+			//-other here
+	+footer()

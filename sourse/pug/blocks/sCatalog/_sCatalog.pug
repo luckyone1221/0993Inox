@@ -56,13 +56,13 @@ mixin sCatalog(data)
 						//-stalevi-kanaty => 2
 
 						//-remove, only for test
-						-for(let i = 0; i < 5; i++)
-							+sCatalogItem({
-								picName: 'stalevi-kanaty-1',
-								title: `stalevi-kanaty ${i}`,
-								pills: ['0,63 т', '0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
-								link: '/04-prod-page.html',
-							})(class="mix stalevi-kanaty")
+						//- -for(let i = 0; i < 5; i++)
+						//- 	+sCatalogItem({
+						//- 		picName: 'stalevi-kanaty-1',
+						//- 		title: `stalevi-kanaty ${i}`,
+						//- 		pills: ['0,63 т', '0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
+						//- 		link: '/04-prod-page.html',
+						//- 	})(class="mix stalevi-kanaty")
 						//-remove, only for test
 
 						//-stropy-kanatni => 3
@@ -70,42 +70,157 @@ mixin sCatalog(data)
 							picName: 'stropy-kanatni-1',
 							title: 'Одногілковий 1СК',
 							pills: ['0,63 т', '0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
-							link: 'odnohilkovyi-1SK.html',
+							link: 'stropy-kanatni-odnohilkovyi-1SK.html',
 						})(class="mix stropy-kanatni")
 						+sCatalogItem({
 							picName: 'stropy-kanatni-2',
 							title: 'Двогілковий 2СК',
 							pills: ['0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т'],
-							link: '#',
+							link: 'stropy-kanatni-dvohilkovyi-2SK.html',
 						})(class="mix stropy-kanatni")
 						+sCatalogItem({
 							picName: 'stropy-kanatni-3',
-							title: 'Чотиригілковий 4СК',
+							title: 'Чотирьохгілковий 4СК',
 							pills: ['1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
-							link: '#',
+							link: 'stropy-kanatni-chotyriohhilkovyi-4SK.html',
 						})(class="mix stropy-kanatni")
 						+sCatalogItem({
 							picName: 'stropy-kanatni-4',
 							title: 'Двопетльовий СКП (заплітання)',
 							pills: ['0,63 т', '0,8 т', '1,25 т', '1,6 т', '2 т', '2,5 т', '2,8 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т'],
-							link: '#',
+							link: 'stropy-kanatni-Dvopetliovyj-SKP-(zaplitannya).html',
 						})(class="mix stropy-kanatni")
 						+sCatalogItem({
 							picName: 'stropy-kanatni-5',
 							title: 'Двопетльовий СКП (втулка)',
 							pills: ['0,63 т', '0,8 т', '1,25 т', '1,6 т', '2 т', '2,5 т', '2,8 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т'],
-							link: '#',
+							link: 'stropy-kanatni-Dvopetliovyj-SKP-(vtulka).html',
 						})(class="mix stropy-kanatni")
 						+sCatalogItem({
 							picName: 'stropy-kanatni-6',
 							title: 'Кільцевій СКК (заплітання)',
 							pills: ['1,25 т', '1,8 т', '2,5 т', '3,2 т', '4 т', '5 т', '7 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
-							link: '#',
+							link: 'stropy-kanatni-Kilcevij-SKK-(zaplitannya).html',
 						})(class="mix stropy-kanatni")
+
 						//-stropy-tekstylni => 4
+						+sCatalogItem({
+							picName: 'stropy-tekstylni-1',
+							title: 'Одногілковий 1СТ',
+							pills: ['1 т', '2 т', '3 т', '4 т', '5 т', '6 т', '8 т', '10 т'],
+							link: 'stropy-tekstylni-odnohilkovyi-1ST.html',
+						})(class="mix stropy-tekstylni")
+						+sCatalogItem({
+							picName: 'stropy-tekstylni-2',
+							title: 'Двогілковий 2СТ',
+							pills: ['1 т', '2 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
+							link: 'stropy-tekstylni-dvohilkovyi-2ST.html',
+						})(class="mix stropy-tekstylni")
+						+sCatalogItem({
+							picName: 'stropy-tekstylni-3',
+							title: 'Чотирьохгілковий 4СТ',
+							pills: ['1 т', '2 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т'],
+							link: 'stropy-tekstylni-chotyriohhilkovyi-4ST.html',
+						})(class="mix stropy-tekstylni")
+						+sCatalogItem({
+							picName: 'stropy-tekstylni-4',
+							title: 'Двопетльовий СТП',
+							pills: ['1 т', '2 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т'],
+							link: 'stropy-tekstylni-Dvopetliovyj-STP.html',
+						})(class="mix stropy-tekstylni")
+						+sCatalogItem({
+							picName: 'stropy-tekstylni-5',
+							title: 'Кільцевий СТК',
+							pills: ['1 т', '2 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т'],
+							link: 'stropy-tekstylni-kilcevij-STK.html',
+						})(class="mix stropy-tekstylni")
 						//-stropy-lantsiuhovi => 5
+						+sCatalogItem({
+							picName: 'stropy-lantsiuhovi-1',
+							title: 'Одногілковий 1СЛ',
+							pills: ['1,12 т', '2 т', '3,15 т', '5,3 т', '8 т', '11,2 т', '15 т', '21,2 т'],
+							link: 'stropy-lantsiuhovi-odnohilkovyi-1SL.html',
+						})(class="mix stropy-lantsiuhovi")
+						+sCatalogItem({
+							picName: 'stropy-lantsiuhovi-2',
+							title: 'Двогілковий 2СЛ',
+							pills: ['1,6 т', '2,8 т', '4,25 т', '7,5 т', '11,2 т','21,2 т', '30 т'],
+							link: 'stropy-lantsiuhovi-dvohilkovyi-2SL.html',
+						})(class="mix stropy-lantsiuhovi")
+						+sCatalogItem({
+							picName: 'stropy-lantsiuhovi-3',
+							title: 'чотирьохгілковий 4СЛ',
+							pills: ['2,36 т', '4,25 т', '6,7 т', '11,2 т', '17 т', '26,5 т', '31,5 т', '45 т'],
+							link: 'stropy-lantsiuhovi-dvohilkovyi-2SL.html',
+						})(class="mix stropy-lantsiuhovi")
+						+sCatalogItem({
+							picName: 'stropy-lantsiuhovi-4',
+							title: 'Кільцевий УСЛ',
+							pills: ['1,8 т', '3,15 т', '5 т', '8,5 т', '12,5 т', '20 т', '23,6 т', '33,5 т', '50 т'],
+							link: 'stropy-lantsiuhovi-kiltseviy-USL.html',
+						})(class="mix stropy-lantsiuhovi")
+						+sCatalogItem({
+							picName: 'stropy-lantsiuhovi-5',
+							title: 'Гілка ланцюгова (ГЛ)',
+							pills: ['1,12 т', '2 т', '3,15 т', '5,3 т', '8 т', '11,2 т', '15 т'],
+							link: 'stropy-lantsiuhovi-gilka_lancugova-GL.html',
+						})(class="mix stropy-lantsiuhovi")
+						+sCatalogItem({
+							picName: 'stropy-lantsiuhovi-6',
+							title: 'Двогілковий 2СЛГЗ',
+							pills: ['2,6 т', '4,25 т', '6,7 т', '11,2 т', '17 т', '26,5 т', '31,5 т', '45 т'],
+							link: 'stropy-lantsiuhovi-gilka_lancugova-GL.html',
+						})(class="mix stropy-lantsiuhovi")
 						//-stiazhni-remeni => 6
+						+sCatalogItem({
+							picName: 'stiazhni-remeni-1',
+							title: 'Стяжні ремені з гаками',
+							pills: ['3 т', '5 т', '7,5 т', '10 т'],
+							link: 'stiazhni-remeni-z-gakamy.html',
+						})(class="mix stiazhni-remeni")
+						+sCatalogItem({
+							picName: 'stiazhni-remeni-2',
+							title: 'Стяжні ремені Кільцеві',
+							pills: ['3 т', '5 т', '7,5 т', '10 т'],
+							link: 'stiazhni-remeni-kiltsevi.html',
+						})(class="mix stiazhni-remeni")
 						//-buksyruvalni-remeni => 7
+						+sCatalogItem({
+							picName: 'buksyruvalni-remeni-1',
+							title: 'Буксирувальний ремінь Петля - Петля',
+							pills: ['2,5 т', '5 т', '8 т', '14 т', '18 т', '25 т', '35 т'],
+							link: 'buksyruvalni-remeni-petla-petla.html',
+						})(class="mix buksyruvalni-remeni")
+						+sCatalogItem({
+							picName: 'buksyruvalni-remeni-2',
+							title: 'Буксирувальний ремінь Петля - ГАК',
+							pills: ['2,5 т', '5 т', '8 т', '14 т', '18 т', '25 т', '35 т'],
+							link: 'buksyruvalni-remeni-petla-gak.html',
+						})(class="mix buksyruvalni-remeni")
+						+sCatalogItem({
+							picName: 'buksyruvalni-remeni-3',
+							title: 'Буксирувальний ремінь ГАК - ГАК',
+							pills: ['2,5 т', '5 т', '8 т', '14 т', '18 т', '25 т', '35 т'],
+							link: 'buksyruvalni-remeni-gak-gak.html',
+						})(class="mix buksyruvalni-remeni")
+						+sCatalogItem({
+							picName: 'buksyruvalni-remeni-4',
+							title: 'Буксирувальний ремінь петля-скоба',
+							pills: ['2,5 т', '5 т', '8 т', '14 т', '18 т', '25 т', '35 т'],
+							link: 'buksyruvalni-remeni-petla-skoba.html',
+						})(class="mix buksyruvalni-remeni")
+						+sCatalogItem({
+							picName: 'buksyruvalni-remeni-5',
+							title: 'Буксирувальний ремінь скоба-скоба',
+							pills: ['2,5 т', '5 т', '8 т', '14 т', '18 т', '25 т', '35 т'],
+							link: 'buksyruvalni-remeni-skoba-skoba.html',
+						})(class="mix buksyruvalni-remeni")
+						+sCatalogItem({
+							picName: 'buksyruvalni-remeni-6',
+							title: 'Буксирувальний ремінь скоба-ГАК',
+							pills: ['2,5 т', '5 т', '8 т', '14 т', '18 т', '25 т', '35 т'],
+							link: 'buksyruvalni-remeni-skoba-gak.html',
+						})(class="mix buksyruvalni-remeni")
 						//-buksyruvalni-trosy => 8
 						//-tali-ruchni-lantsiuhovi => 9
 						//-

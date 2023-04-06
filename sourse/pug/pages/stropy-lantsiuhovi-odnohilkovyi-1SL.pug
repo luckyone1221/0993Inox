@@ -1,0 +1,90 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stropy-lantsiuhovi',
+					txt: 'Стропи ланцюгові',
+				},
+				{
+					href: '',
+					txt: 'Строп ланцюговий 1СЛ',
+				},
+			],
+			title: 'Строп канатний 1СК',
+			imgs: [
+				'stropy-lantsiuhovi-1.jpg'
+			],
+			chars: [
+				{
+					key: 'Строп ланцюговий одногілковий',
+					val: '',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '7:1;',
+				},
+				{
+					key: 'Матеріал',
+					val: 'ланцюги вантажопідйомні G80, комплектуючі G80;',
+				},
+				{
+					key: 'Температурний діапазон',
+					val: 'від -40 до +100 °С;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 818-4:2018;',
+				},
+				{
+					key: 'Гарантія',
+					val: '6 місяців.',
+				},
+			],
+			pills: ['1,12', '2', '3,15', '5,3', '8', '11,2', '15', '21,2'],
+			tableTxt: 'ТЕХНІЧНІ ХАРАКТЕРИСТИКИ ланцюгових СТРОП 1СЛ',
+			tableImg: 'stropy-lantsiuhovi-1-table.png',
+		})
+			//- content here
+			p Ланцюгові стропи 1СЛ складаються з комплектуючих високої міцності 8 класу, що дозволяє зменшити їх вагу при збереженні високих показників вантажопідйомності. Такі стропи мають широке застосування, особливо у вимогливих умовах, таких як агресивні середовища, високі температури або при підйому вантажів з зміщеним центром ваги або гострими кромками.
+			h6 Застосування ланцюгових стропів 1СЦ з крюком можливе в таких галузях:
+			ul
+				li Металургійна промисловість та інші виробництва з високотемпературними цехами;
+				li Будівельна галузь;
+				li Роботи з навантаження та розвантаження вантажів;
+				li Такелажні роботи в морських та річкових портах.
+		+sOther()
+			//-other here
+	+footer()

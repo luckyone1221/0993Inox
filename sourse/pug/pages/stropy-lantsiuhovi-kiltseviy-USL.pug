@@ -1,0 +1,85 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stropy-lantsiuhovi',
+					txt: 'Стропи ланцюгові',
+				},
+				{
+					href: '',
+					txt: 'Строп кільцевий УСЛ',
+				},
+			],
+			title: 'Строп кільцевий УСЛ',
+			imgs: [
+				'stropy-lantsiuhovi-4.jpg'
+			],
+			chars: [
+				{
+					key: 'Строп ланцюговий кільцевий',
+					val: '',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '4:1;',
+				},
+				{
+					key: 'Матеріал',
+					val: 'ланцюги вантажопідйомні G80, комплектуючі G80;',
+				},
+				{
+					key: 'Температурний діапазон',
+					val: 'від -40 до +100 °С;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 818-4:2018;',
+				},
+				{
+					key: 'Гарантія',
+					val: '6 місяців.',
+				},
+			],
+			pills: ['1,8', '3,15', '5', '8,5', '12,5', '20', '23,6', '33,5', '50'],
+			tableTxt: 'ТЕХНІЧНІ ХАРАКТЕРИСТИКИ ланцюгових СТРОП CЛК',
+			tableImg: 'stropy-lantsiuhovi-4-table.png',
+		})
+			//- content here
+			p Строп УСЛ є універсальним стропом ланцюгового типу, складається з відрізка легованого ланцюга для підйому вантажів, кінці якого з'єднані через сполучну ланку-метелика. Ця проста конструкція стропу ланцюгового дозволяє зберігати низьку ціну, а також забезпечує зручність його використання.
+			p Універсальний ланцюговий строп можна використовувати в різних схемах стропування вантажу, таких як зашморг, люлька та інші. Використання стропу УСЛ дозволяє зручно піднімати довгі вантажі, такі як труби, сортовий металопрокат, сталеві стрижні, металеві гарячі заготовки, вузли, технологічні агрегати та інші.
+		+sOther()
+			//-other here
+	+footer()

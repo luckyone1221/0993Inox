@@ -1,0 +1,86 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stropy-lantsiuhovi',
+					txt: 'Стропи ланцюгові',
+				},
+				{
+					href: '',
+					txt: 'Строп ланцюговий ГЛ',
+				},
+			],
+			title: 'Строп ланцюговий ГЛ',
+			imgs: [
+				'stropy-lantsiuhovi-5.jpg'
+			],
+			chars: [
+				{
+					key: 'Гілка ланцюгова',
+					val: '',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '4:1;',
+				},
+				{
+					key: 'Матеріал',
+					val: 'ланцюг, гак, ланка сполучна або ланцюг, ланка, ланка сполучна;',
+				},
+				{
+					key: 'Температурний діапазон',
+					val: 'від -40 до +100 °С;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 818-4:2018;',
+				},
+				{
+					key: 'Гарантія',
+					val: '6 місяців.',
+				},
+			],
+			pills: ['1,12', '2', '3,15', '5,3', '8', '11,2', '15'],
+			tableTxt: 'ТЕХНІЧНІ ХАРАКТЕРИСТИКИ ланцюгових СТРОП ГЛ',
+			tableImg: 'stropy-lantsiuhovi-5-table.png',
+		})
+			//- content here
+			p Строп з гілкою ланцюговою можна розглядати як один з варіантів стропа ланцюгового одногілкового 1СЛ. Виготовляються стропи ВЛ з високоміцного ланцюга та комплектуючих міцності 8 класу (G80), що дозволяє їм ідеально підходити для перевезення вантажів з дстурими кромками або в агресивних середовищах з високими температурами.
+			p Найбільш поширеними варіантами виконання є гак-гак, гак-обмежувач-гак-обмежувач, ланка-ланка та інші.
+			p Переваги використання стропів з гілкою ланцюговою включають компактність, можливість ремонту, довговічність, стійкість до високих температур, стійкість до механічних пошкоджень та можливість регулювання довжини гілок (як додаткова опція).
+		+sOther()
+			//-other here
+	+footer()

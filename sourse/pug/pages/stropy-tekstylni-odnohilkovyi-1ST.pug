@@ -1,0 +1,90 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stropy-tekstylni',
+					txt: 'Стропи текстильні',
+				},
+				{
+					href: '',
+					txt: 'Строп текстильний 1СТ',
+				},
+			],
+			title: 'Строп текстильний 1СТ',
+			imgs: [
+				'stropy-tekstylni-1.jpg'
+			],
+			chars: [
+				{
+					key: 'Строп текстильний одногілковий',
+					val: '',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '7:1;',
+				},
+				{
+					key: 'Матеріал',
+					val: '100% поліестер;',
+				},
+				{
+					key: 'Температурний діапазон',
+					val: 'від -40 до +100 °С;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 1492-1:2016;',
+				},
+				{
+					key: 'Гарантія',
+					val: '3 місяці.',
+				},
+			],
+			pills: ['1', '2', '3', '4', '5', '6', '8', '10'],
+			tableTxt: 'ТЕХНІЧНІ ХАРАКТЕРИСТИКИ текстильних СТРОП 1СТ',
+			tableImg: 'stropy-tekstylni-1-table.png',
+		})
+			//- content here
+			p Текстильні стропи 1СТ є найкращим рішенням для підйому та переміщення чутливих вантажів. Завдяки м'якому та широкому поліестеровому матеріалу, ймовірність пошкодження поверхні вантажу знижується до мінімуму.. Крім того, працювати з текстильними стропами дуже легко, приємно та безпечно. Оскільки текстильні стропи мають властивості, такі як легкість, компактність та корозійна стійкість, вони ідеально підходять для оснащення автоевакуаторів, автокранів та кранів-маніпуляторів.
+			h6 Сфери застосування:
+			ul
+				li для вантажно-розвантажувальних робіт;
+				li опускання/підйому з водойм різних плавальних засобів, таких як човни, катери, яхти тощо;
+				li комплектації машин з краном-маніпулятором та автокранів;
+				li виробництвах, дотримуючись правил роботи зі стропами.
+		+sOther()
+			//-other here
+	+footer()
