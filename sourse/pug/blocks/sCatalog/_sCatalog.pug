@@ -366,7 +366,7 @@ mixin sOtherItem(data)
 		+prodItem(data)
 
 mixin sCatalogItem(data)
-	+e.item-col.col-sm-6.col-xl-4&attributes(attributes)
+	+e.item-col.col-6.col-sm-6.col-xl-4&attributes(attributes)
 		+prodItem(data)
 
 mixin prodItem(data)
@@ -376,7 +376,7 @@ mixin prodItem(data)
 		+e.pills-row.row
 			-for(let pill of data.pills)
 				+sCatalogPill(pill)
-		+e.btn Переглянути деталі
+		+e.btn Деталі
 
 mixin sCatalogPill(txt)
 	.col-auto.d-block
