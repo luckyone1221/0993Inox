@@ -1,0 +1,113 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=tali-ruchni-lantsiuhovi',
+					txt: 'Талі ручні ланцюгові',
+				},
+				{
+					href: '',
+					txt: 'Таль ручна ланцюгова шестернева',
+				},
+			],
+			title: 'Таль ручна ланцюгова шестернева',
+			imgs: [
+				'tali-ruchni-lantsiuhovi-1.jpg',
+				'tali-ruchni-lantsiuhovi-2.jpg',
+				'tali-ruchni-lantsiuhovi-3.jpg'
+			],
+			chars: [
+				{
+					key: 'Таль ручна ланцюгова шестернева',
+					val: '',
+				},
+				{
+					key: 'Тип талі',
+					val: 'посилена конструкція Heavy duty;',
+				},
+				{
+					key: 'Привідний ланцюг в комплекті, Вантажний ланцюг 8 класу з захисним покриттям',
+					val: '',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ EN 13157:2014;',
+				},
+				{
+					key: 'Гарантія',
+					val: '12 місяців.',
+				},
+			],
+			pills: ['0,5', '1', '2', '3', '5', '10'],
+			tableTxt: 'Технічні характеристики талі ручної',
+			tableImg: 'tali-ruchni-lantsiuhovi-1-table.png',
+		})
+			//- content here
+			p Таль ланцюгова ручна призначена для підіймання та утримання в підвішеному стані вантажів вагою від 250 кг до 10 т однією людиною. Це ідеальний варіант для використання на будівництвах, заводах, шахтах, фермах, доках і складах для встановлення обладнання, а також для завантаження і розвантаження товарів. Оскільки таль може бути прикріплена до будь-якого типу візка як рухомий ланцюговий блок, вона підходить для монорельсових мостових систем, ручних кранів і стрілових кранів. Піднімання і опускання вантажу здійснюється за допомогою привідного ланцюга.
+			h6 Основні переваги даної ланцюгової талі полягають у:
+			ul 
+				li безпеці та надійності роботи з мінімальним обслуговуванням,
+				li високій продуктивності,
+				li легкій вазі,
+				li привабливому зовнішньому вигляді з компактним розміром,
+				li довговічності в обслуговуванні.
+		+sOther()
+			//-other here
+			+sOtherItem({
+				picName: 'stropy-kanatni-2',
+				title: 'Двогілковий 2СК',
+				pills: ['0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т'],
+				link: 'stropy-kanatni-dvohilkovyi-2SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-kanatni-3',
+				title: 'Чотирьохгілковий 4СК',
+				pills: ['1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
+				link: 'stropy-kanatni-chotyriohhilkovyi-4SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-1',
+				title: 'Одногілковий 1СТ',
+				pills: ['1 т', '2 т', '3 т', '4 т', '5 т', '6 т', '8 т', '10 т'],
+				link: 'stropy-tekstylni-odnohilkovyi-1ST.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-2',
+				title: 'Двогілковий 2СТ',
+				pills: ['1 т', '2 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
+				link: 'stropy-tekstylni-dvohilkovyi-2ST.html',
+			})
+	+footer()

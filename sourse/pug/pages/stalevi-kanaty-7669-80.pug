@@ -1,0 +1,111 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stalevi-kanaty',
+					txt: 'Сталеві канати',
+				},
+				{
+					href: '',
+					txt: 'Канат сталевий оцинкований ДСТУ 7669-80',
+				},
+			],
+			title: 'Канат сталевий оцинкований ДСТУ 7669-80',
+			imgs: [
+				'stalevi-kanaty-10.jpg'
+			],
+			chars: [
+				{
+					key: 'Покриття',
+					val: 'оцинкований (С);',
+				},
+				{
+					key: 'Сердечник',
+					val: "металевий, твердий;",
+				},
+				{
+					key: 'Конструкція',
+					val: '6х36 (1+7+7/7+14)+7х7(1+6);',
+				},
+				{
+					key: 'Призначення',
+					val: 'екскаваторний, для металургійних кранів та похилих установок підйому в шахтах;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ 7669-80.',
+				},
+			],
+			pills: [],
+			tableTxt: 'Технічні ХАРАКТЕРИСТИКИ сталевих КАНАТІВ ДСТУ 7669-80:',
+			tableImg: 'stalevi-kanaty-10-table.png',
+		})
+			//- content here
+			p Канат ДСТУ 7669-80 є оптимальним поєднанням міцності та гнучкості. Для досягнення максимальної міцності в зовнішньому шарі використовуються зносостійкі дроти, а металевий сердечник забезпечує високу міцність каната та запобігає розтягуванню під великими навантаженнями. Конструкція каната включає подвійне звивання типу ЛК-РО і складається з шести ідентичних пасів, що містять багато дротів. Така конструкція забезпечує високу гнучкість каната. Крім того, канат може бути виготовлений як правого, так і лівого плетіння.
+			h6 Сфери застосування:
+			ul 
+				li для різноманітних видів кранів: автомобільних, залізничних, баштових, мостових, козлових, портальних;
+				li для підйомних, тягових механізмів у різних виробництвах, а також в металургії та інших галузях промисловості;
+				li використовується на землерийних та гірських машинах;
+				li в якості вантових і стріляв канатів, а також для розтяжок, які несуть канати для мостів;
+				li в шахтних та підйомних установках.
+		+sOther()
+			//-other here
+			+sOtherItem({
+				picName: 'stropy-kanatni-2',
+				title: 'Двогілковий 2СК',
+				pills: ['0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т'],
+				link: 'stropy-kanatni-dvohilkovyi-2SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-kanatni-3',
+				title: 'Чотирьохгілковий 4СК',
+				pills: ['1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
+				link: 'stropy-kanatni-chotyriohhilkovyi-4SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-1',
+				title: 'Одногілковий 1СТ',
+				pills: ['1 т', '2 т', '3 т', '4 т', '5 т', '6 т', '8 т', '10 т'],
+				link: 'stropy-tekstylni-odnohilkovyi-1ST.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-2',
+				title: 'Двогілковий 2СТ',
+				pills: ['1 т', '2 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
+				link: 'stropy-tekstylni-dvohilkovyi-2ST.html',
+			})
+	+footer()

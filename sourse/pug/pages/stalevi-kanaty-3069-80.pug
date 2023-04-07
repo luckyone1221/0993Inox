@@ -1,0 +1,111 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stalevi-kanaty',
+					txt: 'Сталеві канати',
+				},
+				{
+					href: '',
+					txt: 'Канат сталевий оцинкований ДСТУ 3069-80',
+				},
+			],
+			title: 'Канат сталевий оцинкований ДСТУ 3069-80',
+			imgs: [
+				'stalevi-kanaty-2.jpg'
+			],
+			chars: [
+				{
+					key: 'Покриття',
+					val: 'оцинкований (С).',
+				},
+				{
+					key: 'Сердечник',
+					val: 'органічний;',
+				},
+				{
+					key: 'Конструкція',
+					val: '6х7(1-6)-FC;',
+				},
+				{
+					key: 'Призначення',
+					val: 'тягові канати для підвісних доріг;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ 3069-80;',
+				},
+			],
+			pills: [],
+			tableTxt: 'Технічні ХАРАКТЕРИСТИКИ ОЦИНКОВАНИХ КАНАТІВ ДСТУ 3069-80:',
+			tableImg: 'stalevi-kanaty-2-table.png',
+		})
+			//- content here
+			p Канат ДСТУ 3069-80 складається з подвійного звивання оцинкованих дротів з лінійним торканням у пасмі з органічним сердечником. Його можна виготовити як з правим, так і з лівим плетінням. Цей канат зазвичай має оцинковане покриття, що розширює його застосування в умовах зі складним кліматом або специфічними умовами експлуатації. Канат має збільшений діаметр дротів у пасмах, що забезпечує підвищену зносостійкість.
+			p Канат може бути упакований як намотування на дерев'яний барабан, так і в пов'язану бухту.
+			h6 Сфери застосування:
+			ul 
+				li Для виготовлення розтяжок;
+				li Для підвісу;
+				li Для господарських потреб;
+				li Для оснащення тралів.
+		+sOther()
+			//-other here
+			+sOtherItem({
+				picName: 'stropy-kanatni-2',
+				title: 'Двогілковий 2СК',
+				pills: ['0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т'],
+				link: 'stropy-kanatni-dvohilkovyi-2SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-kanatni-3',
+				title: 'Чотирьохгілковий 4СК',
+				pills: ['1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
+				link: 'stropy-kanatni-chotyriohhilkovyi-4SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-1',
+				title: 'Одногілковий 1СТ',
+				pills: ['1 т', '2 т', '3 т', '4 т', '5 т', '6 т', '8 т', '10 т'],
+				link: 'stropy-tekstylni-odnohilkovyi-1ST.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-2',
+				title: 'Двогілковий 2СТ',
+				pills: ['1 т', '2 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
+				link: 'stropy-tekstylni-dvohilkovyi-2ST.html',
+			})
+	+footer()

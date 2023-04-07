@@ -27,14 +27,15 @@ mixin sProdCard(data)
 						-for(let item of data.chars)
 							+sProdCardChar(item.key, item.val)
 					+e.btn(href="#") Дізнатися вартість
-			+e.pills-box
-				+e.p-row.row.align-items-center
-					.col-auto
-						+e.p-txt Вантажопідйомність, тонн:
-					.col-auto
-						+e.p-sub-row.row
-							-for (let item of data.pills)
-								+sProdCardPill(item)
+			if (data.pills.length > 0)		
+				+e.pills-box
+					+e.p-row.row.align-items-center
+						.col-auto
+							+e.p-txt Вантажопідйомність, тонн:
+						.col-auto
+							+e.p-sub-row.row
+								-for (let item of data.pills)
+									+sProdCardPill(item)
 			+e.content
 				block
 			+e.table-title=data.tableTxt

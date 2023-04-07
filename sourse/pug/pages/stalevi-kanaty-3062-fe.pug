@@ -1,0 +1,112 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stalevi-kanaty',
+					txt: 'Сталеві канати',
+				},
+				{
+					href: '',
+					txt: 'Канат сталевий DIN 3062 FE',
+				},
+			],
+			title: 'Канат сталевий DIN 3062 FE',
+			imgs: [
+				'stalevi-kanaty-6.jpg'
+			],
+			chars: [
+				{
+					key: 'Покриття',
+					val: 'світлий, без покриття "СВ";',
+				},
+				{
+					key: 'Сердечник',
+					val: "органічний;",
+				},
+				{
+					key: 'Конструкція',
+					val: '8х19S 8x (1 + 9 + 9) +1 FC;',
+				},
+				{
+					key: 'Призначення',
+					val: 'для підйомно-транспортних машин; ліфтові;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'EN 12385-5 (DIN 3062 FE), 8x19S-FC.',
+				},
+			],
+			pills: [],
+			tableTxt: 'Технічні ХАРАКТЕРИСТИКИ ОЦИНКОВАНИХ КАНАТІВ DIN 3062:',
+			tableImg: 'stalevi-kanaty-6-table.png',
+		})
+			//- content here
+			p Канат сталевий DIN 3062 є багатопрядним двічі крученим сталевим канатом, що використовується для підйому вантажів та обладнання. Одна з особливостей цього канату полягає у його використанні в ліфтовому господарстві та інших системах підйому для людей та вантажів, завдяки його унікальній багатосталковій конструкції.
+			p Щоб використовувати цей канат для підйому людей, необхідно здійснити додаткове випробування на заводі-виробнику з наступним внесенням відповідної інформації в сертифікат якості. Канат DIN 3062 складається з восьми ідентичних прядей, при цьому зовнішній шар має більший діаметр дроту, що підвищує його зносостійкість при тривалому безперервному використанні на великій висоті.
+			p Цей канат може мати тільки органічний сердечник, такий як пенька, сизаль або поліпропілен, що надає йому додаткову гнучкість та здатність працювати на шківах невеликих діаметрів. Зазвичай, канат виготовляється з дроту без покриття та консерваційного шару канатної мастила та поставляється упакованим у дерев'яний барабан або в пов'язану бухту, залежно від кількості.
+			h6 Сфери застосування:
+			ul 
+				li в таких видах техніки, як автомобілі, залізниці, баштові, мостові та козлові крани, кораблі;
+				li на підйомних механізмах, телях різних виробників, металургійних заводах;
+				li у вантажолюдських та пасажирських ліфтах, а також у землерийних та гірничих машинах;
+				li в шахтних підйомних установках та на канатних дорогах.
+		+sOther()
+			//-other here
+			+sOtherItem({
+				picName: 'stropy-kanatni-2',
+				title: 'Двогілковий 2СК',
+				pills: ['0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т'],
+				link: 'stropy-kanatni-dvohilkovyi-2SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-kanatni-3',
+				title: 'Чотирьохгілковий 4СК',
+				pills: ['1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
+				link: 'stropy-kanatni-chotyriohhilkovyi-4SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-1',
+				title: 'Одногілковий 1СТ',
+				pills: ['1 т', '2 т', '3 т', '4 т', '5 т', '6 т', '8 т', '10 т'],
+				link: 'stropy-tekstylni-odnohilkovyi-1ST.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-2',
+				title: 'Двогілковий 2СТ',
+				pills: ['1 т', '2 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
+				link: 'stropy-tekstylni-dvohilkovyi-2ST.html',
+			})
+	+footer()

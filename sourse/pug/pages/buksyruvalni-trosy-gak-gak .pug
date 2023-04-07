@@ -1,0 +1,119 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=buksyruvalni-trosy',
+					txt: 'Буксирувальні троси',
+				},
+				{
+					href: '',
+					txt: 'Трос буксирувальний сталевий (гак-гак)',
+				},
+			],
+			title: 'Трос буксирувальний сталевий (гак-гак)',
+			imgs: [
+				'buksyruvalni-trosy-3.jpg'
+			],
+			chars: [
+				{
+					key: 'Виконання',
+					val: 'Гак-Гак;',
+				},
+				{
+					key: 'Коефіцієнт запасу міцності',
+					val: '1,5:1;',
+				},
+				{
+					key: 'Призначення',
+					val: 'Для автомобілей та спеціальної вантажної техніки;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ 7668-80, 2688-80;',
+				},
+				{
+					key: 'Гарантія',
+					val: '3 місяці.',
+				},
+			],
+			pills: ['4', '6', '10', '15', '25', '35'],
+			tableTxt: 'Перелік робочого та розривного навантаження для буксирувального сталевого троса:',
+			tableImg: 'buksyruvalni-trosy-1-table.png',
+		})
+			//- content here
+			p Буксирувальний трос із сталевого канату призначений для пересування тяжких автомобілів, таких як сільськогосподарська, дорожньо-будівельна, військова техніка та інші види важкого автотранспорту.
+			p У виробництві буксирувальних тросів використовують гнучкі сталеві канати з органічним осердям, а кінці канату формують петлі, застосовуючи ручне плетіння або обтискання алюмінієвою втулкою в гідравлічному пресі.
+			h6 Переваги буксирувальних тросів включають:
+			ul 
+				li Високі розривні характеристики, що гарантує безпечне буксирування важкого автотранспорту.
+				li Довговічність та стійкість до зношування.
+				li Стійкість до динамічних ривків, яка забезпечує безпеку під час буксирування.
+				li Зручна експлуатація, що забезпечує більш комфортну роботу порівняно з жорстким зчепленням.
+			h6 Існує кілька варіантів виготовлення буксирувальних тросів, серед яких можна виділити наступні:
+			ul 
+				li Петля-Петля - трос з петлями на кінцях;
+				li Крюк-Петля - трос з петлею і гаком;
+				li Крюк-Крюк - ремінь з гаками з обох сторін;
+				li Скоба-Петля - ремінь з вухом і скобою;
+				li Скоба-Скоба - трос з шаклами та скобами;
+				li Крюк-Скоба - тканинний буксир з гаком і скобою, шаклами.
+		+sOther()
+			//-other here
+			+sOtherItem({
+				picName: 'stropy-kanatni-2',
+				title: 'Двогілковий 2СК',
+				pills: ['0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т'],
+				link: 'stropy-kanatni-dvohilkovyi-2SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-kanatni-3',
+				title: 'Чотирьохгілковий 4СК',
+				pills: ['1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
+				link: 'stropy-kanatni-chotyriohhilkovyi-4SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-1',
+				title: 'Одногілковий 1СТ',
+				pills: ['1 т', '2 т', '3 т', '4 т', '5 т', '6 т', '8 т', '10 т'],
+				link: 'stropy-tekstylni-odnohilkovyi-1ST.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-2',
+				title: 'Двогілковий 2СТ',
+				pills: ['1 т', '2 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
+				link: 'stropy-tekstylni-dvohilkovyi-2ST.html',
+			})
+	+footer()

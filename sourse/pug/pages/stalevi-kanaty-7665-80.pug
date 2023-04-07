@@ -1,0 +1,107 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stalevi-kanaty',
+					txt: 'Сталеві канати',
+				},
+				{
+					href: '',
+					txt: 'Канат сталевий ДСТУ 7665-80',
+				},
+			],
+			title: 'Канат сталевий ДСТУ 7665-80',
+			imgs: [
+				'stalevi-kanaty-5.jpg'
+			],
+			chars: [
+				{
+					key: 'Покриття',
+					val: 'без покриття;',
+				},
+				{
+					key: 'Сердечник',
+					val: "органічний, м'який;",
+				},
+				{
+					key: 'Конструкція',
+					val: '6х25 (1+6; 6+12)+1 о.с.;',
+				},
+				{
+					key: 'Призначення',
+					val: 'для вантажопідіймальних механізмів та підйомно-транспортних машин, при виробництві стропів;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ 7665-80.',
+				},
+			],
+			pills: [],
+			tableTxt: 'Технічні ХАРАКТЕРИСТИКИ КАНАТІВ ДСТУ 7665-80:',
+			tableImg: 'stalevi-kanaty-5-table.png',
+		})
+			//- content here
+			p Канат сталевий за стандартом ДСТУ 7665-80, який є аналогом більш сучасних DIN 3057 та ISO 2408, представляє собою вид металевих канатів з подвійною звивкою, що складається з конструкції 6х25 (1+6; 6+12)+ОС типу ЛК-З. У такому канаті між дротами заповнення та дротами в шарах пасом забезпечується лінійний дотик.
+			p Канат 6х25 складається з м'якого органічного сердечника та 6 пасом, кожен з яких містить 25 дротиків без захисного покриття.
+			h6 Сфери застосування:
+			p Застосування даного типу канатів полягає в забезпеченні високої гнучкості металевих виробів, зокрема у крановому обладнанні та підйомно-транспортних машинах. Лінійний дотик допомагає знизити знос дроту, що забезпечує підвищену працездатність канату ДСТУ 7665-80 порівняно з точковим дотиком дроту, характерним для тросів ТК. Проте, через відсутність захисного покриття та тонкість дроту в пасмах, канати типу ЛК-З не рекомендується використовувати в агресивних середовищах.
+		+sOther()
+			//-other here
+			+sOtherItem({
+				picName: 'stropy-kanatni-2',
+				title: 'Двогілковий 2СК',
+				pills: ['0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т'],
+				link: 'stropy-kanatni-dvohilkovyi-2SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-kanatni-3',
+				title: 'Чотирьохгілковий 4СК',
+				pills: ['1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
+				link: 'stropy-kanatni-chotyriohhilkovyi-4SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-1',
+				title: 'Одногілковий 1СТ',
+				pills: ['1 т', '2 т', '3 т', '4 т', '5 т', '6 т', '8 т', '10 т'],
+				link: 'stropy-tekstylni-odnohilkovyi-1ST.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-2',
+				title: 'Двогілковий 2СТ',
+				pills: ['1 т', '2 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
+				link: 'stropy-tekstylni-dvohilkovyi-2ST.html',
+			})
+	+footer()

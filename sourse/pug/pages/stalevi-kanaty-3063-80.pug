@@ -1,0 +1,110 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDelivery/_sDelivery.pug
+
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sGoods/_sGoods.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sOther/_sOther.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '04.png'
+
+block title
+	- let  title= 'catalog'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	main
+		+sProdCard({
+			breadcrumbs: [
+				{href: '/', txt: 'Головна',},
+				{href: '/catalog.html', txt: 'Каталог',},
+				{
+					href: '/catalog.html?category=stalevi-kanaty',
+					txt: 'Сталеві канати',
+				},
+				{
+					href: '',
+					txt: 'Канат сталевий оцинкований ДСТУ 3063-80',
+				},
+			],
+			title: 'Канат сталевий оцинкований ДСТУ 3063-80',
+			imgs: [
+				'stalevi-kanaty-9.jpg'
+			],
+			chars: [
+				{
+					key: 'Покриття',
+					val: 'оцинкований (С);',
+				},
+				{
+					key: 'Сердечник',
+					val: "металевий;",
+				},
+				{
+					key: 'Конструкція',
+					val: '1Х19 (1+6+12);',
+				},
+				{
+					key: 'Призначення',
+					val: 'для розтяжок, вантів, підвісних доріг, канати для кранів, автомобілебудування, грозозахисту;',
+				},
+				{
+					key: 'Стандарт',
+					val: 'ДСТУ 3063-80, (аналог DIN 3053, EN 12385-4).',
+				},
+			],
+			pills: [],
+			tableTxt: 'Технічні ХАРАКТЕРИСТИКИ сталевих КАНАТІВ ДСТУ 3063-80:',
+			tableImg: 'stalevi-kanaty-9-table.png',
+		})
+			//- content here
+			p Канат ДСТУ 3063-80 сталевий оцинкований - це одинарної завивки спіральний сталевий канат з крапковим торканням дротів в канаті, який має конструкцію 1х19 (1 + 6 + 12) та додатковий захист оцинкованим покриттям. Хоча ці канати часто використовуються для розтяжок щогл, вишок, та підвісних доріг, їх основне призначення - захист повітряних ліній передач, і відповідно, їх також називають грозозахисними. Оскільки канати за ДСТУ 3063-80 мають достатню жорсткість, не рекомендується їх використовувати в місцях з динамічними, пульсуючими навантаженнями. Важливо також відзначити, що ці канати не дуже підходять для транспортних вантажопідйомних машин та механізмів.
+			h6 Сфери застосування:
+			ul 
+				li захист повітряних ліній передач від грози;
+				li підвіска кабелів та проводів на відкритому повітрі;
+				li використання в розтяжках кріплень різних конструкцій;
+				li застосування у морській промисловості (суднобудування).
+		+sOther()
+			//-other here
+			+sOtherItem({
+				picName: 'stropy-kanatni-2',
+				title: 'Двогілковий 2СК',
+				pills: ['0,8 т', '1 т', '1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т'],
+				link: 'stropy-kanatni-dvohilkovyi-2SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-kanatni-3',
+				title: 'Чотирьохгілковий 4СК',
+				pills: ['1,6 т', '2 т', '2,5 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т', '16 т', '20 т', '25 т', '32 т'],
+				link: 'stropy-kanatni-chotyriohhilkovyi-4SK.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-1',
+				title: 'Одногілковий 1СТ',
+				pills: ['1 т', '2 т', '3 т', '4 т', '5 т', '6 т', '8 т', '10 т'],
+				link: 'stropy-tekstylni-odnohilkovyi-1ST.html',
+			})
+			+sOtherItem({
+				picName: 'stropy-tekstylni-2',
+				title: 'Двогілковий 2СТ',
+				pills: ['1 т', '2 т', '3,2 т', '4 т', '5 т', '6,3 т', '8 т', '10 т', '12,5 т'],
+				link: 'stropy-tekstylni-dvohilkovyi-2ST.html',
+			})
+	+footer()
