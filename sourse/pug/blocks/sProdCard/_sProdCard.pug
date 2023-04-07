@@ -26,7 +26,7 @@ mixin sProdCard(data)
 					+e.chars
 						-for(let item of data.chars)
 							+sProdCardChar(item.key, item.val)
-					+e.btn(href="#") Дізнатися вартість
+					+e.btn(href="modal-thanks").link-modal-js Дізнатися вартість
 			if (data.pills.length > 0)		
 				+e.pills-box
 					+e.p-row.row.align-items-center
