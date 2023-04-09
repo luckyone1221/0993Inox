@@ -16,47 +16,55 @@ mixin sGoods(data)
 							imgNum: 1,
 							title: 'СТАЛЕВІ КАНАТИ',
 							descr: 'Канати сталеві: кранові, ліфтові, шахтні, екскаваторні, талеві, морські та загального призначення.',
+							link: './catalog.html?category=stalevi-kanaty',
 						})
 						+sGoodsCard({
 							imgNum: 2,
 							title: 'стропи Канатні',
 							descr: 'Вантажні канатні стропи є найбільш поширеним видом вантажозахватних пристосувань.',
+							link: './catalog.html?category=stropy-kanatni',
 						})
 						+sGoodsCard({
 							imgNum: 3,
 							title: 'стропи текстильні',
 							descr: 'Текстильна стропа найкращий помічник у підйомі делікатний, крихких та пофарбованих вантажів.',
+							link: './catalog.html?category=stropy-tekstylni',
 						})
 						+sGoodsCard({
 							imgNum: 4,
 							title: 'стропи Ланцюгові',
 							descr: 'Мають високу зносостійкість,  використовуються в гарячих та агресивних середовищах.',
+							link: './catalog.html?category=stropy-lantsiuhovi',
 						})
 						+sGoodsCard({
 							imgNum: 5,
 							title: 'Стяжні ремені',
 							descr: 'Головною перевагою є простота в експлуатації в купі з надійністю при кріплення та фіксації вантажу.',
+							link: './catalog.html?category=stiazhni-remeni',
 						})
 						+sGoodsCard({
 							imgNum: 6,
 							title: 'Буксирувальні ремені',
 							descr: 'Пристрій, що використовується для буксирування практично всіх колісних транспортних засобів.',
+							link: './catalog.html?category=buksyruvalni-remeni',
 						})
 						+sGoodsCard({
 							imgNum: 7,
 							title: 'БУКСИРУВАЛЬНИЙ ТРОС',
 							descr: 'Призначений для буксирування автомобілів, тягачів, дорожньої та важкої спецтехніки.',
+							link: './catalog.html?category=buksyruvalni-trosy',
 						})
 						+sGoodsCard({
 							imgNum: 8,
 							title: 'ТАЛІ РУЧНІ ЛАНЦЮГОВІ',
 							descr: 'Призначені для підйому, підтягування й утримання в піднятому положенні вантажів.',
+							link: './catalog.html?category=tali-ruchni-lantsiuhovi',
 						})
 	// end sGoods
 
 mixin sGoodsCard(data)
 	.col-lg-4.col-sm-6
-		+e.card(href="#")
+		+e.card(href=data.link)
 			+e.img
 				+pic(`sGoodsCard-${data.imgNum}.jpg`)
 			+e.title=data.title
