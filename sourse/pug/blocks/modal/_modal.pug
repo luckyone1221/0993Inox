@@ -1,21 +1,37 @@
 mixin modal()
 	//  start modals
-	//a(href="modal-call").link-modal-js modal-call
+	//a(href="modal-thanks").link-modal-js modal-thanks
+	//a(href="modal-price").link-modal-js modal-price
 	div(id="modal-thanks"  style="display: none")
 		+b.modal-win
-			+form-wrap
-				.text-center
-					+e.title.form-data.h3.ttu Дякуюємо за заявку
-	div(id="modal-call"  style="display: none")
-		+b.modal-win
-			+form-wrap
-				.text-center
-					+e.title.form-data.h3.ttu Обратный звонок
-					p.after-headline Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут
-
-				+input("Ваше Имя")(required)  
-				+e.BUTTON.btn.btn(type="submit"  )  
-				+policy()
+			.row.gx-0.gy-0
+				+e.col--img.col-md-auto
+					+pic('modal-img.jpg')
+				+e.col--content.col-md-auto.text-center.text-md-start
+					+e.title Дякуємо за ваш запит!
+					+e.txt
+						p Наші менеджери надішлють вам відповідь найшвидшим часом.
+	div(id="modal-price"  style="display: none")
+		+b.modal-win--long
+			.row.gx-0.gy-0
+				+e.col--img.col-md-auto
+					+pic('modal-img2.jpg')
+				+e.col--content.col-md-auto.text-center.text-md-start
+					+e.title Дізнатися вартість
+					+e.txt
+						p Оберіть, будь ласка, меседжер, який вам більше до вподоби - Telegram або Viber.
+						p Натисніть на одну з кнопок нижче, і наші менеджери надішлють вам відповідь найшвидшим часом.
+					+e.btn-row.row
+						.col-6
+							+e.btn--tg(href="#")
+								+e.btn-img
+									img(src='img/svg/telegram.svg' alt="")
+								span Telegram
+						.col-6
+							+e.btn--vb(href="#")
+								+e.btn-img
+									img(src='img/svg/viber.svg' alt="")
+								span Viber
 	// #modal-call
 	
 	// end modals

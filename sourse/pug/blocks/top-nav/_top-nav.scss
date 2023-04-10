@@ -65,6 +65,7 @@
 	//-
 	@include media-breakpoint-down(lg){
 		.menu{
+			list-style: none;
 			margin-bottom: rem(40);
 		}
 

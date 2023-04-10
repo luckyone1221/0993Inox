@@ -365,7 +365,7 @@ function eventHandler() {
 	let category = urlParams.get('category');
 	if(category){
 		let current = document.querySelector(`input[value=".${category}" ]`);
-		console.log(current);
+
 		if(current){
 			current.click();
 		}
@@ -420,6 +420,7 @@ function eventHandler() {
 
 		spaceBetween: 0,
 	});
+
 	//
 	let sOtherSlider = new Swiper('.sOther-slider-js', {
 		slidesPerView: "auto",
