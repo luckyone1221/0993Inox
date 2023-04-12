@@ -66,22 +66,22 @@
 	@include media-breakpoint-down(lg){
 		.menu{
 			list-style: none;
-			margin-bottom: rem(40);
+			margin-bottom: rem(0);
 		}
 
 		&__contacts-title,
 		.menu-item{
 			padding: rem(16);
 
-			font-size: rem(18);
+			font-size: rem(24);
 			line-height: calc(21/18);
 			text-transform: uppercase;
-			text-align: center;
+			text-align: left;
 			color: $gray-900;
 
-			border-top: 1px solid $gray-110;
+			// border-top: 1px solid $gray-110;
 			&:last-child{
-				border-bottom: 1px solid $gray-110;
+				// border-bottom: 1px solid $gray-110;
 			}
 
 			a{
@@ -106,9 +106,9 @@
 
 .number{
 	padding: rem(16);
-	border-top: 1px solid $gray-110;
+	// border-top: 1px solid $gray-110;
 	&:last-child{
-		border-bottom: 1px solid $gray-110;
+		// border-bottom: 1px solid $gray-110;
 	}
 
 	@include media-breakpoint-up(lg){
@@ -126,7 +126,7 @@
 	&__n-row{
 		--bs-gutter-x: #{rem(10)};
 
-		justify-content: center;
+		// justify-content: center;
 	}
 	&__icon{
 		display: block;
@@ -140,6 +140,7 @@
 		@include mt();
 		font-weight: 700;
 		line-height: calc(19/16);
+		font-size: rem(20);
 
 		color: $gray-900;
 		&:hover{
