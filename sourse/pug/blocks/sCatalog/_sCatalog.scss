@@ -130,6 +130,24 @@
     margin-bottom: rem(16);
   }
   &__f-item{
+    @include media-breakpoint-down(md) {
+      font-size: rem(24);
+      margin-bottom: rem(20);
+    }
+
+    .circle {
+      @include media-breakpoint-down(md) {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:before {
+        @include media-breakpoint-down(md) {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
     margin-bottom: rem(10);
     &:last-child{
       margin-bottom: 0;
