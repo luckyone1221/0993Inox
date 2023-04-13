@@ -17,7 +17,7 @@ mixin sForm()
 				//-
 				+e.col--small.col-lg-auto.d-none.d-lg-block
 				+e.col--big.col-lg-auto
-					+e.txt Обираючи нас Ви отримаете: професійну консультацію, високоякісну продукцію, гарантії виробника, та гарні враження від співпраці! Звертайтесь до професіоналів.
+					+e.txt Обираючи нас Ви отримаєте: професійну консультацію, високоякісну продукцію, гарантії виробника, та гарні враження від співпраці! Звертайтесь до професіоналів.
 					+e.numbers
 						+topNavNumbers()
 					+e.item(href="mailto:inox.customercare@gmail.com")
@@ -31,6 +31,6 @@ mixin sForm()
 						input(type="hidden" value="Секція звязатися з нами" name="order")
 						+input("Ім’я", 'text', undefined, 'name')
 						+input("Телефон", 'tel', undefined, 'tel')
-						+input("Ваше повідомлення або питання...", 'textarea', undefined, 'name')
-						+e.btn(type="submit" href="modal-thanks").link-modal-js Відправити
+						+input("Ваше повідомлення або питання...", 'textarea', undefined, 'msg')
+						+e.btn(type="submit").link-modal-js Відправити
 	// end sForm
