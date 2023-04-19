@@ -6,7 +6,7 @@ mixin form-head()
 mixin input(placeholder,  t='text', label, name= t)
 	mixin t(t='text',placeholder, name= t)
 		if t== "textarea"
-			+e.TEXTAREA.input.form-control(name=name placeholder=placeholder)
+			+e.TEXTAREA.input.form-control(name=name placeholder=placeholder required)
 		else if t== "select"
 			+e.SELECT.input.form-select( name= name)&attributes(attributes)
 				option(value= placeholder)= placeholder
@@ -20,7 +20,7 @@ mixin input(placeholder,  t='text', label, name= t)
 		else if t=='date'
 			+e.INPUT.input.form-control(name=name type=t )&attributes(attributes)
 		else
-			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder)&attributes(attributes)
+			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder required)&attributes(attributes)
 	+e.input-wrap.form-group
 		if label
 			label
